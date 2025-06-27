@@ -16,7 +16,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 6px 100px;
+  padding: 6px 12px;
   position: relative;
   border-bottom: 3px solid #0057A3;
 }
@@ -31,15 +31,16 @@ body {
 .nav-links {
   list-style: none;
   display: flex;
-  margin-right: 300px;
+  align-items: center;
+  margin-right: 2rem;
 }
 .nav-links li {
-  margin-left: 80px; 
+  margin-left: 50px; 
 }
 .nav-links li a {
   color: #0057A3;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -60,7 +61,6 @@ body {
 }
 
 .profile {
-  position: absolute;
   top: 15px; 
   right: 100px; 
   display: flex;
@@ -133,7 +133,7 @@ body {
   
 }
 
-.btn {
+/*.btn {
   background: none;
   color: #0057A3;
   padding: 12px 24px;
@@ -146,11 +146,11 @@ body {
   text-decoration: none;
   transition: background 0.3s ease;
   
-}
+} 
 
 .btn:hover {
   background: #d9e6f2;
-}
+} */
 
 .play-badge {
   height: 50px;
@@ -309,4 +309,53 @@ body {
   text-align: center;
   font-size: 13px;
   color: #aaa;
+}
+
+.user-accounts-container{
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 10rem;
+}
+
+.admin-page-container{
+  margin-top: 10rem;
+  margin-bottom: 15rem;
+}
+
+.buttons-admin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.bigButton {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-user-container {
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+}
+
+.heading-edit {
+  text-align: center;
+  font-weight: bold;
+}
+
+.big-text{
+  font-size: 70px;
+  font-weight: bold;
+  color: #0057A3;
+}
+
+.medium-text{
+  font-size: 24px;
+  color: #333;
 }

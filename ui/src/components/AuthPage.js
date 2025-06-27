@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function AuthPage() {
+function AuthPage({ onUserChange }) {
   const [isSignUp, setIsSignUp] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -27,12 +27,14 @@ function AuthPage() {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ name, email, phone, password }),
+          credentials: 'include',
         });
 
         const data = await res.json();
 
         if (res.status === 201) {
           alert("✅ User registered successfully!");
+          onUserChange(); 
           navigate("/services"); // ✅ Go to Services page after registration
         } else {
           alert(`❌ ${data.message || "Error registering user"}`);
@@ -41,8 +43,43 @@ function AuthPage() {
         alert("❌ Network or server error");
         console.error(error);
       }
-    } else {
-      alert("🔐 Sign-in not implemented yet.");
+    } 
+
+    else {
+        if (!email || !password) {
+          alert("❌ Please enter email and password");
+          return;
+        }
+      try {
+        const res = await fetch("http://localhost:5000/api/users/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+          credentials: 'include',
+        });
+
+        const data = await res.json();
+
+        if (res.status === 200) {
+          alert("✅ Login successful!");
+          onUserChange();
+          if(data.user?.role === 'admin') {
+            navigate("/admin"); 
+          } else{
+            navigate("/services");
+          }
+        }
+
+         else {
+          alert(`❌ ${data.message || "Error logging in"}`);
+        }
+      }
+      catch (error) {
+        alert("❌ Network or server error");
+        console.error(error);
+      }
     }
   };
 
@@ -55,17 +92,22 @@ function AuthPage() {
       <br />
 
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
 
         {isSignUp && (
-          <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
+        )}
+        
+        <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+
+
+        {isSignUp && (
+          <input type="tel" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} required />
         )}
 
-        <input type="tel" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} required />
+        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
 
         {isSignUp && (
           <>
-            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
             <input type="password" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
           </>
         )}
