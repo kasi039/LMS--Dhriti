@@ -72,7 +72,7 @@ body {
 .profile-icon {
   width: 50px;
   height: auto;
-  
+
 }
 
 /* Homepage Base Styles */
@@ -336,7 +336,6 @@ body {
   font-weight: bold;
   border-radius: 8px;
   border: none;
-  cursor: pointer;
 }
 
 .edit-user-container {
@@ -359,3 +358,74 @@ body {
   font-size: 24px;
   color: #333;
 }
+
+.loan-button{
+  align-items: center;
+  display: flex;
+  border: 0;
+  justify-content: center;
+  border-radius: 2rem;
+  transition: background 0.3s ease;
+  padding: 1rem;
+}
+
+
+
+.loan-icon {
+  width: 7rem;
+  height: auto;
+}
+
+.apply-head {
+  font-size: 36px;
+  color: #0057A3;
+  font-weight: bold;
+  margin-top : 8rem;
+}
+
+.apply-subhead {
+  font-size: 30px;
+  color: #333;
+  margin-top: 6rem;
+}
+
+.dataform{
+  border-radius: 4rem;
+  margin-bottom: 8rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.success-head{
+  font-size: 36px;
+  color: #0b9f19;
+  font-weight: bold;
+  margin-top : 8rem;
+}
+
+.success-img{
+  width: 20rem;
+  height: auto;
+}
+
+.success-subhead{
+  font-size: 30px;
+  color: #333;
+  margin-top: 6rem;
+}
+
+.app-id{
+  color:#0b9f19
+}
+
+.table{
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.Document-anchor{
+  text-decoration: none;
+  border-radius: 0.5rem;
+  background-color:#00acee;
+  color: white;
+  padding: 0.5rem
+}
+

@@ -68,15 +68,20 @@ useEffect(() => {
 
           {user?.role !== 'admin' && (
           <li className="loan-button-container">
-            <button className="get-loan-button">Get loan</button>
+            <button className="get-loan-button" onClick={() => navigate('/applyloan')}>Get loan</button>
           </li>
           )}
 
 
           {user ? (
+            <>
             <li>
               <a href="#" onClick={(e) =>{e.preventDefault(); logoutuser();}}>Logout</a>
             </li>
+            <li>
+              <a href="/userapplications">My Profile</a>
+            </li>
+            </>
           ) : (
             <li className="profile" onClick={() => navigate('/Auth')}>
               <Profile className="profile-icon" />

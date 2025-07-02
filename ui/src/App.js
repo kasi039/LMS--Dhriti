@@ -8,6 +8,10 @@ import ServicesPage from "./components/ServicesPage";
 import AdminPage from "./components/Adminui";
 import UserAccounts from "./components/useraccounts";
 import EditUserPage from "./components/edituser";
+import ApplyLoan from "./components/ApplyLoan";
+import Success from "./components/successfull";
+import UserApplications from "./components/ApplicationbyUser";
+import Userdocuments from "./components/DocumentsByUser"
 
 import "../src/css/App.css";
 import "../src/css/AuthPage.css";
@@ -28,6 +32,11 @@ function App() {
           <Route path="/admin" element={<AdminPage/>} />
           <Route path="/useraccounts" element={<UserAccounts/>} />
           <Route path="editform/:id" element={<EditUserPage/>} />
+          <Route path="/applyloan" element={<ApplyLoan />} />
+          <Route path="/success" element={<Success />} />
+          <Route path="/userapplications" element={<UserApplications />} />
+          <Route path="/userdocuments" element={<Userdocuments />}/>
+          {/* Add more routes as needed */}
         </Routes>
         <Footer />
       </div>
