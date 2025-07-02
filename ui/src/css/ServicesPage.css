@@ -1,0 +1,19 @@
+/* Services Page Styling */
+.services-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.content {
+  margin-top: 2rem;
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+}
+
+.services-list li {
+  margin: 10px 0;
+  font-size: 18px;
+}

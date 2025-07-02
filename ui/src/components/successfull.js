@@ -1,5 +1,5 @@
 import { ReactComponent as Successphoto } from '../assets/success.svg';
-import Button from 'react-bootstrap/esm/Button';
+import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 

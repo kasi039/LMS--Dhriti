@@ -2,7 +2,7 @@ import { ReactComponent as Carloan } from '../assets/car.svg';
 import { ReactComponent as Homeloan } from '../assets/home.svg';
 import { ReactComponent as Studentloan } from '../assets/student.svg';
 import { useState, useEffect } from 'react';
-import Button from 'react-bootstrap/Button';
+import { Button } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
 
 

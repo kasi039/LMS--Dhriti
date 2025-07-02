@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // Note: import from react-dom/client for React 18
+import ReactDOM from 'react-dom/client'; 
 import App from './App';
 
 const container = document.getElementById('root');
