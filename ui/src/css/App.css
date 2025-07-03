@@ -429,3 +429,15 @@ body {
   padding: 0.5rem
 }
 
+
+
+.dark-theme {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-theme .navbar,
+.dark-theme .card {
+  background-color: #1f1f1f;
+  color: white;
+}

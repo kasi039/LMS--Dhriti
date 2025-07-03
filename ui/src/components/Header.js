@@ -95,20 +95,11 @@ function Header({ userChanged }) {
             </li>
           )}
 
-          {user ? (
-            <>
-              <li>
-                <a href="#" onClick={(e) => { e.preventDefault(); logoutuser(); }}>Logout</a>
-              </li>
-              <li>
-                <a href="/userapplications">My Profile</a>
-              </li>
-            </>
-          ) : (
+          
             <li className="profile" onClick={() => navigate('/Auth')}>
               <Profile className="profile-icon" />
             </li>
-          )}
+          
         </ul>
       </nav>
     </header>
