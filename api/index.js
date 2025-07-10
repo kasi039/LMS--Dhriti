@@ -3,7 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const session = require("express-session");
 const cors = require('cors');
-require('dotenv').config(); // ⬅️ Load env variables
+require('dotenv').config(); // Load env variables
 
 const app = express();
 
@@ -25,12 +25,12 @@ app.use(session({
 }));
 
 
-// ✅ Connect to MongoDB using env variable
+//  Connect to MongoDB using env variable
 mongoose.connect(process.env.MONGODB_URI)
-.then(() => console.log('✅ MongoDB connected'))
-.catch((err) => console.error('❌ MongoDB connection error:', err));
+.then(() => console.log('MongoDB connected'))
+.catch((err) => console.error(' MongoDB connection error:', err));
 
-// ✅ API Routes
+//  API Routes
 const userRoutes = require('./routes/users');
 app.use('/api/users', userRoutes);
 
@@ -43,5 +43,5 @@ app.use('/api/documents', uploadRoutes);
 
 
 const PORT = process.env.PORT;
-app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
       

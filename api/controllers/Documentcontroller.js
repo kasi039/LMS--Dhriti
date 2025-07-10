@@ -35,7 +35,7 @@ exports.documentsbyuser = async (req, res) => {
 
 exports.documentsbyId = async (req, res) => {
   try {
-    const document = await Document.find({ applicationId: req.params.Id });
+    const document = await Document.findById(req.params.id);
     res.set({
       'Content-type': document.fileType,
       'Content-Disposition': `inline; filename="${document.fileName}"`

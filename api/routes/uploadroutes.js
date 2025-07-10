@@ -7,5 +7,5 @@ const Uploaddoc = require('../controllers/Documentcontroller');
 router.post('/upload', upload, Uploaddoc.uploadDocument);
 
 router.get('/userdocuments', Uploaddoc.documentsbyuser)
-router.get(':id/view', Uploaddoc.documentsbyId )
+router.get('/:id/view', Uploaddoc.documentsbyId )
 module.exports = router;

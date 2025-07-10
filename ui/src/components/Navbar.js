@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Navbar, Nav, Container, Dropdown} from 'react-bootstrap';
 import { ReactComponent as Logo } from '../assets/logo.svg';
 import { ReactComponent as Profile } from '../assets/profile.svg'; 
+import { ReactComponent as SigninIcon } from '../assets/Signinicon.svg'; 
 
 
 
@@ -47,40 +48,42 @@ function Navbarfunction({userChanged }) {
     }
 
   return (
-    <Navbar bg="light" expand="lg">
-      <Container>
+    <Navbar expand="lg" className="d-flex justify-content-between">
+      <Container fluid className="d-flex justify-content-between align-items-center">
         <Navbar.Brand>
           <a href="/">
             <Logo className="logo-icon" />
           </a>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbar" />
-        <Navbar.Collapse id="navbar">
-          <Nav className="me-auto">
-
+          <Nav className="align-items-center">
            {user?.role !== 'admin' && (
             <>
-            <Nav.Link as={Link} to="/about">About Us</Nav.Link>
-            <Nav.Link as={Link} to="/help">Help</Nav.Link>
-            <Nav.Link as={Link} to={ user ? "/services" : "/Auth"}>Services</Nav.Link>
-            <Nav.Link as={Link} to={ user ? "/payments" : "/Auth"}>Payments</Nav.Link>
-            </>
-           )}
-           {user?.role === 'user' && (
-            <>
+            <Nav.Link className="NavLink" as={Link} to={ user ? "/services" : "/Auth"}>Services</Nav.Link>
+            
+            <Nav.Link className="NavLink" as={Link} to="/help">Student Loan</Nav.Link>
+            <Nav.Link className="NavLink" as={Link} to="/about">About Us</Nav.Link>
+            <Nav.Link className="NavLink" as={Link} to={"/payments"}>Payments</Nav.Link>
 
             </>
            )}
+
+           {!user && (
+            <Nav.Link className="NavLink get-loan-button" as={Link}>Get Loan</Nav.Link>
+           )}
+
 
            {user?.role === 'admin' && (
-              <Nav.Link as={Link} to="/admin">Admin Dashboard</Nav.Link>
+              <Nav.Link className="NavLink" as={Link} to="/admin">Admin Dashboard</Nav.Link>
            )}
-          </Nav>
+
 
           <div className="d-flex align-items-center">
+            {!user ?  (<>
+               <SigninIcon onClick={() => navigate('/Auth')} className="signinicon" />
+            </>) :
             <Dropdown align="end">
               <Dropdown.Toggle variant="light" id="dropdown-basic" className="d-flex align-items-center border-0 bg-transparent">
-                <Profile style={{ width: '30px', height: '30px' }} />
+                <Profile className="profileicon" />
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 { user ? (
@@ -92,8 +95,10 @@ function Navbarfunction({userChanged }) {
                 
               </Dropdown.Menu>
             </Dropdown>
+           }
+                     
           </div>
-        </Navbar.Collapse>
+          </Nav>
       </Container>
     </Navbar>
   );

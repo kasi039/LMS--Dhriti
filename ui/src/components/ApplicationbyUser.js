@@ -67,7 +67,7 @@ function UserApplications() {
                             <td>{application.applicationDate}</td>
                             <td className={application.status === 'pending'? 'text-warning': application.status==='approved'? 'text-success': application.status === 'rejected'? 'text-danger' : ''}><b>{application.status}</b></td>
                             <td>
-                                <Button variant="primary" onClick={() => navigate('/userdocuments')} >View Documents Uploaded</Button>
+                                <Button variant="primary" onClick={() => navigate(`/userdocuments/${application._id}`)} >View Documents Uploaded</Button>
                             </td>
                         </tr>
                     ))}

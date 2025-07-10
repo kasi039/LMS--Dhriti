@@ -16,7 +16,7 @@ function AuthPage({ onUserChange }) {
 
     if (isSignUp) {
       if (password !== confirmPassword) {
-        alert("❌ Passwords do not match");
+        alert(" Passwords do not match");
         return;
       }
 
@@ -33,21 +33,21 @@ function AuthPage({ onUserChange }) {
         const data = await res.json();
 
         if (res.status === 201) {
-          alert("✅ User registered successfully!");
+          alert(" User registered successfully!");
           onUserChange(); 
-          navigate("/services"); // ✅ Go to Services page after registration
+          navigate("/services"); //  Go to Services page after registration
         } else {
-          alert(`❌ ${data.message || "Error registering user"}`);
+          alert(` ${data.message || "Error registering user"}`);
         }
       } catch (error) {
-        alert("❌ Network or server error");
+        alert(" Network or server error");
         console.error(error);
       }
     } 
 
     else {
         if (!email || !password) {
-          alert("❌ Please enter email and password");
+          alert(" Please enter email and password");
           return;
         }
       try {
@@ -63,7 +63,7 @@ function AuthPage({ onUserChange }) {
         const data = await res.json();
 
         if (res.status === 200) {
-          alert("✅ Login successful!");
+          alert(" Login successful!");
           onUserChange();
           if(data.user?.role === 'admin') {
             navigate("/admin"); 
@@ -73,11 +73,11 @@ function AuthPage({ onUserChange }) {
         }
 
          else {
-          alert(`❌ ${data.message || "Error logging in"}`);
+          alert(` ${data.message || "Error logging in"}`);
         }
       }
       catch (error) {
-        alert("❌ Network or server error");
+        alert(" Network or server error");
         console.error(error);
       }
     }
