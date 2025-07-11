@@ -18,9 +18,9 @@ import "../src/css/AuthPage.css";
 import "../src/css/ServicesPage.css";
 
 function App() {
-  const [userChanged, setUserChanged] = useState(false);
-  const onUserChange = () => {
-    setUserChanged(prev => !prev);  
+  const [userChanged, setUserChanged] = useState(null);
+  const onUserChange = (userData) => {
+    setUserChanged(userData);  
   };
   return (
     <Router>

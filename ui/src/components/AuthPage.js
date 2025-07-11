@@ -34,7 +34,7 @@ function AuthPage({ onUserChange }) {
 
         if (res.status === 201) {
           alert(" User registered successfully!");
-          onUserChange(); 
+          onUserChange(data.user); 
           navigate("/services"); //  Go to Services page after registration
         } else {
           alert(` ${data.message || "Error registering user"}`);
@@ -64,7 +64,7 @@ function AuthPage({ onUserChange }) {
 
         if (res.status === 200) {
           alert(" Login successful!");
-          onUserChange();
+          onUserChange(data.user);
           if(data.user?.role === 'admin') {
             navigate("/admin"); 
           } else{
