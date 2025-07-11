@@ -56,19 +56,24 @@ function Navbarfunction({userChanged }) {
           </a>
         </Navbar.Brand>
           <Nav className="align-items-center">
-           {user?.role !== 'admin' && (
+           {user && user?.role !== 'admin' && (
             <>
-            <Nav.Link className="NavLink" as={Link} to={ user ? "/services" : "/Auth"}>Services</Nav.Link>
+            <Nav.Link className="NavLink" as={Link} to= "/services">Services</Nav.Link>
             
             <Nav.Link className="NavLink" as={Link} to="/help">Student Loan</Nav.Link>
             <Nav.Link className="NavLink" as={Link} to="/about">About Us</Nav.Link>
-            <Nav.Link className="NavLink" as={Link} to={"/payments"}>Payments</Nav.Link>
+            <Nav.Link className="NavLink" as={Link} to="/payments">Payments</Nav.Link>
 
             </>
            )}
 
            {!user && (
-            <Nav.Link className="NavLink get-loan-button" as={Link}>Get Loan</Nav.Link>
+            <>
+            <Nav.Link className="NavLink" as={Link} to= "/Auth">Services</Nav.Link>
+            <Nav.Link className="NavLink" as={Link} to="/Auth">Student Loan</Nav.Link>
+            <Nav.Link className="NavLink" as={Link} to="/Auth">About Us</Nav.Link>
+            <Nav.Link className="NavLink get-loan-button" as={Link} to="/Auth">Get Loan</Nav.Link>
+            </>
            )}
 
 

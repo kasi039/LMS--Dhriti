@@ -15,6 +15,7 @@ import Userdocuments from "./components/DocumentsByUser"
 
 import "../src/css/App.css";
 import "../src/css/AuthPage.css";
+import "../src/css/ServicesPage.css";
 
 function App() {
   const [userChanged, setUserChanged] = useState(false);
