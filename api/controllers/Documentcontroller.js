@@ -1,3 +1,4 @@
+const { application } = require('express');
 const Document = require('../models/Documents');
 
 exports.uploadDocument = async (req, res) => {
@@ -12,7 +13,7 @@ exports.uploadDocument = async (req, res) => {
                 uploadedDocs.push(newDocument);
             }
         }
-        res.status(201).json({ message: 'Document uploaded successfully'});
+        res.status(201).json({ message: 'Document uploaded successfully'}); 
     }
     catch (error) {
         console.error('Error uploading document:', error);
@@ -21,15 +22,18 @@ exports.uploadDocument = async (req, res) => {
 }
 
 
-exports.documentsbyuser = async (req, res) => {
-  try {
-    const loanapplications = await Document.find({ userId: req.session.user?.id });
-    res.status(200).json(loanapplications);
-  } catch (error) {
-    console.error('Error fetching documents:', error);
-    res.status(500).json({ message: 'Error fetching documents', error });
+exports.documentsByApplication = async (req, res) => {
+  try{
+    const {applicationId} = req.params;
+
+    const documents = await Document.find({applicationId});
+
+    res.status(200).json(documents);
   }
-};
+  catch(error){
+    res.status(500).json({message: 'Failed to fetch documents', error});
+  }
+}
 
 
 
@@ -46,3 +50,6 @@ exports.documentsbyId = async (req, res) => {
     res.status(500).json({ message: 'Error fetching users', error });
   }
 };
+
+
+

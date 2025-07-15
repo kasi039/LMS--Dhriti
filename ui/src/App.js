@@ -12,10 +12,11 @@ import ApplyLoan from "./components/ApplyLoan";
 import Success from "./components/successfull";
 import UserApplications from "./components/ApplicationbyUser";
 import Userdocuments from "./components/DocumentsByUser"
+import AllApplications from "./components/Allapplications";
 
 import "../src/css/App.css";
 import "../src/css/AuthPage.css";
-import "../src/css/ServicesPage.css";
+
 
 function App() {
   const [userChanged, setUserChanged] = useState(null);
@@ -37,6 +38,7 @@ function App() {
           <Route path="/success" element={<Success />} />
           <Route path="/userapplications" element={<UserApplications />} />
           <Route path="/userdocuments/:id" element={<Userdocuments />}/>
+          <Route path="/allapplications" element={<AllApplications />}/>
           {/* Add more routes as needed */}
         </Routes>
         <Footer />

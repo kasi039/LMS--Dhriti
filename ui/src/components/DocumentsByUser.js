@@ -11,21 +11,21 @@ function Userdocuments() {
 
         const fetchDocuments = async () => {
             try{
-                const response= await fetch("http://localhost:5000/api/documents/userdocuments", {credentials:"include"});
+                const response= await fetch(`http://localhost:5000/api/documents/documentsbyapplication/${applicationId}`, {credentials:"include"});
                 if(!response.ok){
-                    throw new Error("Failed to fetch documents");     
+                    throw new Error("Failed to fetch documents"); 
                 }
                 const data = await response.json();
-                const filteredDocs = data.filter((doc) => doc.applicationId === applicationId);
-                setDocuments(filteredDocs);
+                
+                setDocuments(data);
             }
             catch(error){
-                console.error('cant fetch documents', error)
+                console.error('cant fetch documents', error) 
             }
         }
 
         fetchDocuments();
-    }, []);
+    }, [applicationId]);
 
     
 
@@ -36,14 +36,12 @@ function Userdocuments() {
                         <tbody>
                             {documents.map((doc) => (
                                 <tr key={doc._id}>
-
-                                            <td className="py-5">
-                                                <a
-                                                    href={`http://localhost:5000/api/documents/${doc._id}/view`} target="_blank" rel="noopener noreferrer" className="Document-anchor">
-                                                    {doc.fileName}
-                                                </a>
-                                            </td>
-
+                                    <td className="py-5">
+                                        <a
+                                            href={`http://localhost:5000/api/documents/${doc._id}/view`} target="_blank" rel="noopener noreferrer" className="Document-anchor">
+                                                {doc.fileName}
+                                        </a>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>

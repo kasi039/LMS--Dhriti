@@ -9,7 +9,7 @@ function AdminPage() {
         <p className="medium-text">Manage user accounts and applications</p>
         <div className="buttons-admin mb-5">
           <Button variant="primary" className="bigButton" onClick={() => navigate('/useraccounts')}>View User Accounts</Button>
-          <Button variant="warning" className="bigButton">View User Applications</Button>
+          <Button variant="warning" className="bigButton" onClick={() => navigate('/allapplications')}>View User Applications</Button>
         </div>
     </div>
   );
