@@ -452,3 +452,10 @@ body {
   width: 120px;
   height: 70px;
 }
+
+
+/*services*/
+
+.services-div{
+  column-gap: 10rem;
+}

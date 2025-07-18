@@ -30,7 +30,7 @@ function UserApplications() {
     
 
     return (
-        <div className="user-accounts-container">
+        <div className="user-accounts-container container">
             <h1 className="mb-5">User Applications</h1>
             {applications.length == 0 ? (<h3 className="text-muted mt-5"><b>No Applications Submitted</b></h3>) : (
             <table className="table table-striped w-100 mx-auto mt-5">

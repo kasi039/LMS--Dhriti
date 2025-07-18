@@ -5,9 +5,9 @@ exports.createLoanApplication = async (req, res) => {
     if (!userId) {
         return res.status(401).json({ message: 'Unauthorized: User not logged in' });
     }
-    const { loantype, amount } = req.body;
+    const { loantype, amount, institutionName, courseDurattion, carMake, carModel, carYear, propertyValue, downPayment, address } = req.body;
     try{
-        const newLoan = new Loan({userId, loantype, amount});
+        const newLoan = new Loan({userId, loantype, amount, institutionName, courseDurattion, carMake, carModel, carYear, propertyValue, downPayment, address});
         await newLoan.save();
         res.status(201).json({ message: 'Loan application created successfully', applicationId: newLoan._id });
     } catch (error) {

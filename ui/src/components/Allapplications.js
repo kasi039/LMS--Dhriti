@@ -30,7 +30,7 @@ function AllApplications() {
     
 
     return (
-        <div className="user-accounts-container">
+        <div className="user-accounts-container container">
             <h1 className="mb-5">User Applications</h1>
             <table className="table table-striped w-100 mx-auto mt-5">
                 <thead>
