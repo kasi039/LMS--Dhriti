@@ -6,12 +6,12 @@ exports.uploadDocument = async (req, res) => {
     const {applicationId } = req.body;
     try{
         const uploadedDocs = [];
-        for (const[fieldName, fileArray] of Object.entries(req.files)) {
-            for (const file of fileArray) {
+        for (const file of req.files) {
+            
                 const newDocument = new Document({ userId, applicationId, fileName:file.originalname, fileType:file.mimetype, data: file.buffer });
                 await newDocument.save();
                 uploadedDocs.push(newDocument);
-            }
+            
         }
         res.status(201).json({ message: 'Document uploaded successfully'}); 
     }

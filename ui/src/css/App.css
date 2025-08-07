@@ -11,69 +11,8 @@ body {
   line-height: 1.6;
 }
 
-/* Navbar Styles for Header */
-.navbar {
-  padding: 6px 20px;
-  border-bottom: 3px solid #0057A3;
-}
 
-.dropdown-toggle::after {
-  display: none;
-}
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-.logo-icon {
-  width: 120px; 
-  height: auto;
-}
-.nav-links {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  margin-right: 2rem;
-}
-
-.NavLink{
-  color: #0057A3;
-  margin-left: 50px; 
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.get-loan-button {
-  background-color: #0057A3; 
-  color: #ffffff; 
-  font-size: 18px; 
-  padding: 10px 20px; 
-  border: none; 
-  border-radius: 10px; 
-  cursor: pointer; 
-  transition: background 0.3s ease;
-  margin-right: 10px;
-}
-
-.get-loan-button:hover {
-  background-color: #0056b3; /* Darker shade on hover */
-}
-
-.profile {
-  top: 15px; 
-  right: 100px; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Profile Icon Styling */
-.profile-icon {
-  width: 50px;
-  height: auto;
-
-}
 
 /* Homepage Base Styles */
 .main-page {

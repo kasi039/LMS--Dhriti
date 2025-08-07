@@ -8,14 +8,31 @@ import ServicesPage from "./components/ServicesPage";
 import AdminPage from "./components/Adminui";
 import UserAccounts from "./components/useraccounts";
 import EditUserPage from "./components/edituser";
-import ApplyLoan from "./components/ApplyLoan";
 import Success from "./components/successfull";
 import UserApplications from "./components/ApplicationbyUser";
 import Userdocuments from "./components/DocumentsByUser"
 import AllApplications from "./components/Allapplications";
+import StudentLoanDetailsForm from "./components/loans/StudentLoanDetailsForm";
+import StudentLoanDocuments from "./components/loans/StudentLoanDocuments";
+import EmployeeLoanDetailsForm from "./components/loans/EmployeeLoanDetailsForm";
+import EmployeeLoanDocuments from "./components/loans/EmployeeLoanDocuments";
+import BusinessLoanDetailsForm from "./components/loans/BusinessLoanDetailsForm";
+import BusinessLoanDocuments   from "./components/loans/BusinessLoanDocuments";
+import HomeLoanDetailsForm from "./components/loans/HomeLoanDetailsForm";
+import HomeLoanDocuments   from "./components/loans/HomeLoanDocuments";
+import CarLoanDetailsForm from "./components/loans/CarLoanDetailsForm";
+import CarLoanDocuments   from "./components/loans/CarLoanDocuments";
+import GoldLoanDetailsForm from "./components/loans/GoldLoanDetailsForm";
+import GoldLoanDocuments   from "./components/loans/GoldLoanDocuments";
+import InstantLoanDetailsForm from "./components/loans/InstantLoanDetailsForm";
+import InstantLoanDocuments   from "./components/loans/InstantLoanDocuments";
+import AboutUsPage from "./components/AboutUsPage";
 
 import "../src/css/App.css";
 import "../src/css/AuthPage.css";
+import "../src/css/ServicesPage.css";
+import "../src/css/AboutUsPage.css";
+import "../src/css/Navbar.css";
 
 
 function App() {
@@ -34,11 +51,25 @@ function App() {
           <Route path="/admin" element={<AdminPage/>} />
           <Route path="/useraccounts" element={<UserAccounts/>} />
           <Route path="editform/:id" element={<EditUserPage/>} />
-          <Route path="/applyloan" element={<ApplyLoan />} />
           <Route path="/success" element={<Success />} />
           <Route path="/userapplications" element={<UserApplications />} />
           <Route path="/userdocuments/:id" element={<Userdocuments />}/>
           <Route path="/allapplications" element={<AllApplications />}/>
+          <Route path="/applyloan/details/student"   element={<StudentLoanDetailsForm />} />
+          <Route path="/applyloan/docs/student"      element={<StudentLoanDocuments />} />
+          <Route path="/applyloan/details/employee" element={<EmployeeLoanDetailsForm />}/>
+          <Route path="/applyloan/docs/employee"             element={<EmployeeLoanDocuments />}/>
+          <Route path="/applyloan/details/business" element={<BusinessLoanDetailsForm/>}/>
+          <Route path="/applyloan/docs/business"            element={<BusinessLoanDocuments/>}/>
+          <Route path="/applyloan/details/home" element={<HomeLoanDetailsForm/>}/>
+          <Route path="/applyloan/docs/home"         element={<HomeLoanDocuments/>}/>
+          <Route path="/applyloan/details/car" element={<CarLoanDetailsForm />} />
+          <Route path="/applyloan/docs/car"       element={<CarLoanDocuments />} />
+          <Route path="/applyloan/details/gold" element={<GoldLoanDetailsForm />} />
+          <Route path="/applyloan/docs/gold"         element={<GoldLoanDocuments />} />
+          <Route path="/applyloan/details/instant" element={<InstantLoanDetailsForm />} />
+          <Route path="/applyloan/docs/instant"     element={<InstantLoanDocuments />} />
+          <Route path="/about" element={<AboutUsPage />} />
           {/* Add more routes as needed */}
         </Routes>
         <Footer />

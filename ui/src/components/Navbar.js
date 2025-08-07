@@ -5,6 +5,8 @@ import { Navbar, Nav, Container, Dropdown} from 'react-bootstrap';
 import { ReactComponent as Logo } from '../assets/logo.svg';
 import { ReactComponent as Profile } from '../assets/profile.svg'; 
 import { ReactComponent as SigninIcon } from '../assets/Signinicon.svg'; 
+import { ReactComponent as NotificationIcon } from "../assets/notification.svg";
+import { ReactComponent as SearchIcon }       from "../assets/search.svg";
 
 
 
@@ -48,7 +50,7 @@ function Navbarfunction({userChanged }) {
     }
 
   return (
-    <Navbar expand="lg" className="d-flex justify-content-between">
+    <Navbar expand="lg" className={`d-flex justify-content-between ${user ? "navbar-logged" : "navbar-public"}`}>
       <Container fluid className="d-flex justify-content-between align-items-center">
         <Navbar.Brand>
           <a href="/">
@@ -60,9 +62,19 @@ function Navbarfunction({userChanged }) {
             <>
             <Nav.Link className="NavLink" as={Link} to= "/services">Services</Nav.Link>
             
-            <Nav.Link className="NavLink" as={Link} to="/help">Student Loan</Nav.Link>
+            
             <Nav.Link className="NavLink" as={Link} to="/about">About Us</Nav.Link>
             <Nav.Link className="NavLink" as={Link} to="/payments">Payments</Nav.Link>
+            <NotificationIcon
+                className="notif-icon"
+                onClick={() => navigate("/notifications")}
+                title="Notifications"
+              />
+              <SearchIcon
+                className="search-icon"
+                onClick={() => navigate("/search")}
+                title="Search"
+              />
 
             </>
            )}
@@ -87,9 +99,9 @@ function Navbarfunction({userChanged }) {
                <SigninIcon onClick={() => navigate('/Auth')} className="signinicon" />
             </>) :
             <Dropdown align="end">
-              <Dropdown.Toggle variant="light" id="dropdown-basic" className="d-flex align-items-center border-0 bg-transparent">
-                <Profile className="profileicon" />
-              </Dropdown.Toggle>
+                <Dropdown.Toggle className="bg-transparent border-0 p-0">
+                  <Profile className="profileicon nav-icon"/>
+                </Dropdown.Toggle>
               <Dropdown.Menu>
                 { user ? (
                   <>

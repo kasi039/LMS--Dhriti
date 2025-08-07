@@ -27,12 +27,13 @@ function EditUserPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-        const response = await fetch(`http://localhost:5000/api/users/${id}`, {
+        const response = await fetch(`http://localhost:5000/api/users/update/${id}`, {
             method: "PUT",
             headers: {
             "Content-Type": "application/json",
             },
             body: JSON.stringify(formData),
+            credentials: 'include',
         });
     
         if (response.ok) {

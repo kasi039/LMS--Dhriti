@@ -1,25 +1,26 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
 const loanSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  loantype: String,
+   loanType: {
+      type: String,
+      enum: ['student', 'employee', 'business', 'home', 'car', 'gold', 'education', 'instant'],
+      required: true,
+    },
   amount: Number,
+
+  details: {
+      type: Schema.Types.Mixed,  // flexible to store loan-specific fields
+      default: {},
+    },
+
+
   applicationDate: { type: Date, default: Date.now },
   status: { type: String, enum: ['pending', 'approved', 'rejected'], default: 'pending' },
 
-  //Student loan
-  institutionName: String,
-  courseDurattion: Number,
 
-  //Home-loan
-  propertyValue: Number,
-  downPayment: Number,
-  address: String,
 
-  //Car-loan
-  carMake: String,
-  carModel: String,
-  carYear: Number
 
 
 });

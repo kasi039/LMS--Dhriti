@@ -1,0 +1,56 @@
+/* ─────────── RESET specific to Bootstrap dropdown caret ─────────── */
+.dropdown-toggle::after { display: none; }
+
+/* ─────────── NAVBAR wrapper ─────────── */
+.navbar {
+  padding:6px 20px;
+  height: 70px;                           /* fixed height */
+  display: flex;
+  align-items: center;
+  transition: background 0.25s ease;
+}
+
+/* public (white) vs logged-in (blue) bars */
+.navbar-public {
+  background: #ffffff;
+  border-bottom: 3px solid #0057A3;
+}
+.navbar-logged { background: #0057A3; }
+
+/* ───── LOGO ───── */
+.logo-icon,
+.logo-icon *            { height: 50px; width: auto; fill: #0057A3; }
+.navbar-logged .logo-icon,
+.navbar-logged .logo-icon * { fill: #ffffff !important; }
+
+/* ───── LINKS ───── */
+.NavLink {
+  color: #0057A3;
+  margin-left: 2rem;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+}
+.navbar-logged .NavLink { color: #ffffff; }
+/* ───── ICON sizing ───── */
+.signinicon { width: 50px; height: 50px; cursor: pointer; margin: 0 1.5rem; }
+
+.nav-icon        { width: 32px; height: 32px; cursor: pointer; margin-left: 1.5rem; }
+
+.notif-icon  { width: 35px; height: 35px; cursor: pointer; margin-left: 2.5rem; }
+.search-icon { width: 35px; height: 35px; cursor: pointer;margin-left: 2.5rem; }
+
+.profileicon { width: 50px; height: 50px; cursor: pointer; }
+
+/* flip SVG fills on blue bar */
+.navbar-logged .signinicon,
+.navbar-logged .profileicon,
+.navbar-logged .nav-icon,
+.navbar-logged svg,
+.navbar-logged .notif-icon,
+.navbar-logged .search-icon,
+.navbar-logged .profileicon *,
+.navbar-logged .nav-icon * { fill: #ffffff !important; color: #ffffff; }
+.navbar-logged{
+  background:#0057A3;  /* ← thin white stroke */
+}

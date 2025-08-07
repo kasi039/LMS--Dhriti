@@ -132,7 +132,13 @@ exports.updateuser = async (req, res) => {
       { new: true }
     );
     if (!updatedUser) return res.status(404).json({ message: 'User not found' });
+    if(req.session.user.id === req.params.id){
+      req.session.user.name = name;
+      req.session.user.email = email;
+      req.session.user.phone = phone;
+    }
     res.json({ message: 'User updated successfully', user: updatedUser });
+
   } catch (error) {
     res.status(500).json({ message: 'Error updating user' });
   }

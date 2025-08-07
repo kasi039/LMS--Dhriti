@@ -12,7 +12,7 @@ function Success() {
                 <Successphoto className="success-img" />
             </div>
             <p className="text-center mt-3 success-subhead">Your application has been submitted successfully. We will review it and get back to you soon.</p>
-            <p className="text-center mt-3 success-subhead">Your application Id:<b className="app-id">{sessionStorage.getItem('applicationId')}</b></p>
+            
             <div className="d-flex justify-content-center mt-4">
                 <Button variant="primary" className="bigButton" onClick={() => navigate("/")} >Go to Dashboard</Button>
             </div>

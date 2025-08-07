@@ -28,7 +28,7 @@ router.get('/:id', userController.singleuser);
 
 // Update User
 
-router.put('/:id', userController.updateuser); 
+router.put('/update/:id', userController.updateuser); 
 
 
 router.post('/logout', userController.logout);

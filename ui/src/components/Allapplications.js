@@ -48,7 +48,7 @@ function AllApplications() {
                     {applications.map((application) => (
                         <tr key={application._id}>
                             <td className={application.status === 'pending'? 'text-warning': application.status==='approved'? 'text-success': application.status === 'rejected'? 'text-danger' : ''}><b>{application._id}</b></td>
-                            <td>{application.loantype}</td>
+                            <td>{application.loanType}</td>
                             <td>$ {application.amount}</td>
                             <td>{application.applicationDate}</td>
                             <td>{application.userId.name}</td>

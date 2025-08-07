@@ -1,61 +1,79 @@
-import { useNavigate } from 'react-router-dom';
-import { ReactComponent as Applynow } from '../assets/Apply_Now.svg';
-import { ReactComponent as Status } from '../assets/Status.svg';
-import { ReactComponent as Payment} from '../assets/Payment.svg';
-import { ReactComponent as Profile } from '../assets/Profileservice.svg';
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-function ServicesPage() {
-  const navigate = useNavigate()
+/* ❶ Loan-category icons (put the SVGs in src/assets/) */
+import { ReactComponent as StudentIcon }   from "../assets/student_loan.svg";
+import { ReactComponent as EmployeeIcon }  from "../assets/employee_loan.svg";
+import { ReactComponent as BusinessIcon }  from "../assets/business_loan.svg";
+import { ReactComponent as HomeIcon }      from "../assets/home_loan.svg";
+import { ReactComponent as CarIcon }       from "../assets/car_loan.svg";
+import { ReactComponent as GoldIcon }      from "../assets/gold_loan.svg";
+import { ReactComponent as InstantIcon }   from "../assets/instant_loan.svg";
+import "../css/ServicesPage.css"; // Import your CSS styles
+
+export default function ServicesPage() {
+  const navigate = useNavigate();
   const [user, setUser] = useState(null);
-    useEffect(() => {
-      const fetchSessionUser = async () => {
-        try {
-          const res = await fetch('http://localhost:5000/api/users/session-user', {
-            credentials: 'include',
-          });
-          if (!res.ok) throw new Error('Not logged in');
-          const data = await res.json();
-          console.log("Fetched session user:", data);
-          setUser(data.user);
-        } catch (err) {
-          console.log("Fetched session user error:", err);
-          setUser(null);
-        }
-      };
-      fetchSessionUser();
-    }, []);
 
+  /* ❷ Fetch session user once */
+  useEffect(() => {
+    (async () => {
+      try {
+        const res  = await fetch("http://localhost:5000/api/users/session-user",
+                                { credentials: "include" });
+        if (!res.ok) throw new Error("Not logged in");
+        const data = await res.json();
+        setUser(data.user);
+      } catch (err) {
+        setUser(null);
+      }
+    })();
+  }, []);
+
+  /* ❸ Tile meta-data array keeps JSX tidy */
+  const tiles = [
+    // in ServicesPage.jsx  (inside the tiles array)
+    { Icon: StudentIcon,  label: "Loan for Student",
+      onClick: () => navigate("/applyloan/details/student") },
+    { Icon: EmployeeIcon, label: "Loan for Employee",
+      onClick: () => navigate("/applyloan/details/employee") },
+    { Icon: BusinessIcon, label:"Loan for Business",
+      onClick:()=>navigate("/applyloan/details/business") },
+
+    { Icon: HomeIcon, label:"Loan for Home",
+      onClick:()=>navigate("/applyloan/details/home") },
+    { Icon: CarIcon, label: "Loan for Car",
+  onClick: () => navigate("/applyloan/details/car") },
+
+    { Icon: GoldIcon, label: "Loan for Gold",
+  onClick: () => navigate("/applyloan/details/gold") },
+
+
+
+    { Icon: InstantIcon, label: "Instant Loan",
+  onClick: () => navigate("/applyloan/details/instant") },
+
+  ];
 
   return (
-    <div style={{ padding: "2rem", textAlign: "center" }}>
-      {user? (<h2>Welcome {user.name}</h2>) : (<h2>Welcome user</h2>)}
-      <p>🎉 You have successfully logged in!</p>
+    <div className="services-wrapper">
+      <p className="mt-3 mb-1 fw-medium">Hi, Welcome</p>
+      <h6 className="fw-bold text-uppercase mb-4">
+        {user ? user.name : "GUEST USER"}
+      </h6>
 
-      <div className="container mt-5">
-        <div className="row g-5 justify-content-around align-items-center services-div">
-          <div className="col-12 col-md-2" onClick={() => navigate('/applyloan')}>
-            <Applynow className="img-fluid mb-2" style={{height: '250px'}}/>
-            <p>Apply Now</p>
-          </div>
-          <div className="col-12 col-md-2" onClick={() => navigate('/userapplications')}>
-            <Status className="img-fluid mb-2" style={{height: '250px'}}/>
-            <p>Track Loan Status</p>
-          </div>
-          <div className="col-12 col-md-2">
-            <Payment className="img-fluid mb-2" style={{height: '250px'}}/>
-            <p>Payment history</p>
-          </div>
-          <div className="col-12 col-md-2">
-            <Profile className="img-fluid mb-2" style={{height: '250px'}}/>
-            <p>View Profile</p>
-          </div>
-        </div>
+      <div className="loan-grid">
+        {tiles.map(({ Icon, label, onClick }) => (
+          <button key={label} className="loan-tile" onClick={onClick}>
+            <Icon className="tile-icon" />
+            <span>{label}</span>
+          </button>
+        ))}
+
+        {/* invisible filler so the last two are centred */}
+        <div className="loan-tile filler" aria-hidden="true"></div>
       </div>
-
-      
+      <button className="btn get-app-btn mt-4">Get Dhriti App</button>
     </div>
   );
 }
-
-export default ServicesPage;
