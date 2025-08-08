@@ -1,5 +1,4 @@
 const Loan = require('../models/loanApplications');
-
 exports.createLoanApplication = async (req, res) => {
     const userId = req.session.user?.id; 
     if (!userId) {
@@ -15,8 +14,6 @@ exports.createLoanApplication = async (req, res) => {
         res.status(500).json({ message: 'Error creating loan application', error });
     }
 }
-
-
 
 exports.applications = async (req, res) => {
   try {

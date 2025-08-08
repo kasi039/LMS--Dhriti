@@ -1,7 +1,7 @@
 // src/pages/loan/InstantLoanDocuments.jsx
 import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { Form, Row, Col, Button, ProgressBar } from "react-bootstrap";
+import { Form, Button, ProgressBar } from "react-bootstrap";
 
 export default function InstantLoanDocuments() {
   const [params] = useSearchParams();
