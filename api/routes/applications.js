@@ -12,4 +12,6 @@ router.put('/statusupdate/:id', Applyloan.statusupdate);
 
 router.get('/getapplicationdetails/:id', Applyloan.getapplicationdetails);
 
+router.delete('/applicationdelete/:id', Applyloan.deleteapplication)
+
 module.exports = router;

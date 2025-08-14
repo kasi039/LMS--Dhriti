@@ -66,3 +66,17 @@ exports.getapplicationdetails = async (req, res) => {
     res.status(500).json({message: 'Error getting details'})
   }
 }
+
+exports.deleteapplication = async (req, res) => {
+  try{
+    const applicationId = req.params.id;
+    const applicationDelete = await Loan.findByIdAndDelete(applicationId);
+    if(!applicationDelete){
+      return res.status(404).json({ message: 'Cant delete' })
+    }
+    res.json({message: 'application deleted successfully'});
+  }
+  catch(error){
+    res.status(500).json({ message: 'Error deleting Application' });
+  }
+}

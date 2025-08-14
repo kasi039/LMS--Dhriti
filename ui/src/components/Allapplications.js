@@ -27,6 +27,25 @@ function AllApplications() {
 
     }, []);
 
+    const DeleteApplication = async (id) => {
+        const confirmation = window.confirm(`Are you sure you want to delete this application with id ${id}`);
+
+        if (!confirmation) {
+            return;
+        }
+        
+        const res = await fetch(`http://localhost:5000/api/applications/applicationdelete/${id}`, {method: "DELETE"})
+        if(res.ok){
+            alert(`deleted application with ${id} successfully`);
+            setApplications(applications.filter((application) => application._id !== id));
+        }
+        else{
+            alert(`error deleting application with ${id}`)
+        }
+        
+
+    } 
+
 
 
     
@@ -43,7 +62,7 @@ function AllApplications() {
                         <th>Date Applied</th>
                         <th>Applicant Name</th>
                         <th>Status</th>
-                        <th>Details</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,6 +76,7 @@ function AllApplications() {
                             <td className={application.status === 'pending'? 'text-warning': application.status==='approved'? 'text-success': application.status === 'rejected'? 'text-danger' : ''}><b>{application.status}</b></td>
                             <td>
                                 <Button variant="primary" onClick={() => navigate(`/applicationdetails/${application._id}`)} >View Details</Button>
+                                <Button variant="danger" className="ms-2" onClick={() => DeleteApplication(application._id) } >Delete Application</Button>
                             </td>
                         </tr>
                     ))}
