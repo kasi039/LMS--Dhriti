@@ -27,7 +27,7 @@ exports.applications = async (req, res) => {
 
 exports.allapplications = async (req, res) => {
   try{
-    const allapplications = await Loan.find().populate("userId", "name");;
+    const allapplications = await Loan.find().populate("userId", "name");
     res.status(200).json(allapplications)
   } catch(error){
     console.error('Error fetching all applications:', error);
@@ -35,3 +35,34 @@ exports.allapplications = async (req, res) => {
   }
 }
 
+exports.statusupdate = async (req, res) => {
+  try{
+    const { status } = req.body;
+    const applicationId = req.params.id;
+    const updatedApplication = await Loan.findByIdAndUpdate(applicationId, { status }, { new: true });
+    if (!updatedApplication) {
+      return res.status(404).json({ message: 'Error occured in updating application' });
+    }
+    res.json(updatedApplication);
+  }
+  catch(error){
+    console.error('Error updating application status:', error);
+    res.status(500).json({ message: 'Error updating application status', error });
+  }
+}
+
+
+exports.getapplicationdetails = async (req, res) => {
+  try{
+    const applicationId = req.params.id;
+    const applicationDetails = await Loan.findById(applicationId);
+    if(!applicationDetails){
+      return res.status(404).json({message: 'Cannot get the application details'})
+    }
+    res.json(applicationDetails)
+  }
+  catch(error){
+    console.error('Error getting details', error)
+    res.status(500).json({message: 'Error getting details'})
+  }
+}

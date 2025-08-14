@@ -8,4 +8,8 @@ router.get('/applicationsbyuser', Applyloan.applications);
 
 router.get('/allapplications', Applyloan.allapplications)
 
+router.put('/statusupdate/:id', Applyloan.statusupdate);
+
+router.get('/getapplicationdetails/:id', Applyloan.getapplicationdetails);
+
 module.exports = router;

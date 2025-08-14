@@ -7,7 +7,7 @@ export default function CarLoanDetailsForm() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
     /* personal */
-    first:"", middle:"", last:"", dob:"", email:"", phone:"",
+    firstName:"", middleName:"", lastName:"", dob:"", email:"", phone:"",
     street:"", city:"", province:"", postal:"",
     /* car */
     make:"", model:"", year:"", vin:"", purchasePrice:"", downPayment:"", dealer:"",

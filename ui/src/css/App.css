@@ -72,24 +72,8 @@ body {
   
 }
 
-/*.btn {
-  background: none;
-  color: #0057A3;
-  padding: 12px 24px;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 8px;
-  border-color: #0057A3;
-  border: 2px solid #0057A3;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.3s ease;
-  
-} 
 
-.btn:hover {
-  background: #d9e6f2;
-} */
+
 
 .play-badge {
   height: 50px;
@@ -393,8 +377,21 @@ body {
 }
 
 
-/*services*/
+
 
 .services-div{
   column-gap: 10rem;
+}
+
+.headings{
+  margin-top: 5rem;
+  margin-bottom:4rem;
+}
+
+.app-details{
+  margin-bottom: 5rem;
+}
+
+.last-button{
+  margin-bottom: 10rem;
 }

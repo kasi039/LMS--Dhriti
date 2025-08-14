@@ -27,11 +27,13 @@ function AllApplications() {
 
     }, []);
 
+
+
     
 
     return (
         <div className="user-accounts-container container">
-            <h1 className="mb-5">User Applications</h1>
+            <h1 className="mb-5">All Users Applications</h1>
             <table className="table table-striped w-100 mx-auto mt-5">
                 <thead>
                     <tr>
@@ -41,7 +43,7 @@ function AllApplications() {
                         <th>Date Applied</th>
                         <th>Applicant Name</th>
                         <th>Status</th>
-                        <th>Documents</th>
+                        <th>Details</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,11 +52,11 @@ function AllApplications() {
                             <td className={application.status === 'pending'? 'text-warning': application.status==='approved'? 'text-success': application.status === 'rejected'? 'text-danger' : ''}><b>{application._id}</b></td>
                             <td>{application.loanType}</td>
                             <td>$ {application.amount}</td>
-                            <td>{application.applicationDate}</td>
+                            <td>{application.applicationDate.split('T')[0]}</td>
                             <td>{application.userId.name}</td>
                             <td className={application.status === 'pending'? 'text-warning': application.status==='approved'? 'text-success': application.status === 'rejected'? 'text-danger' : ''}><b>{application.status}</b></td>
                             <td>
-                                <Button variant="primary" onClick={() => navigate(`/userdocuments/${application._id}`)} >View Documents Uploaded</Button>
+                                <Button variant="primary" onClick={() => navigate(`/applicationdetails/${application._id}`)} >View Details</Button>
                             </td>
                         </tr>
                     ))}
@@ -63,5 +65,6 @@ function AllApplications() {
         </div>
     );
 }
+
 
 export default AllApplications;

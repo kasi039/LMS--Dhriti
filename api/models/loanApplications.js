@@ -11,7 +11,7 @@ const loanSchema = new mongoose.Schema({
   amount: Number,
 
   details: {
-      type: Schema.Types.Mixed,  // flexible to store loan-specific fields
+      type: Schema.Types.Mixed,  
       default: {},
     },
 

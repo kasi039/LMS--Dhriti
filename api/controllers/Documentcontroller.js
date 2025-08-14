@@ -1,4 +1,3 @@
-const { application } = require('express');
 const Document = require('../models/Documents');
 
 exports.uploadDocument = async (req, res) => {

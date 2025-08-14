@@ -27,6 +27,7 @@ import GoldLoanDocuments   from "./components/loans/GoldLoanDocuments";
 import InstantLoanDetailsForm from "./components/loans/InstantLoanDetailsForm";
 import InstantLoanDocuments   from "./components/loans/InstantLoanDocuments";
 import AboutUsPage from "./components/AboutUsPage";
+import GetTheApplicationDetails from "./components/ApplicationDetails"
 
 import "../src/css/App.css";
 import "../src/css/AuthPage.css";
@@ -70,6 +71,7 @@ function App() {
           <Route path="/applyloan/details/instant" element={<InstantLoanDetailsForm />} />
           <Route path="/applyloan/docs/instant"     element={<InstantLoanDocuments />} />
           <Route path="/about" element={<AboutUsPage />} />
+          <Route path="/applicationdetails/:id" element={<GetTheApplicationDetails/>} />
           {/* Add more routes as needed */}
         </Routes>
         <Footer />

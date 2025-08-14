@@ -8,11 +8,10 @@ export default function InstantLoanDetailsForm() {
 
   /* only the bare minimum for a same-day cash loan */
   const [form, setForm] = useState({
-    first: "", last: "", email: "", phone: "",
+    firstName: "", lastName: "", email: "", phone: "",
     dob: "", sin: "",               // SIN optional but typical for payday checks
     street: "", city: "", province: "", postal: "",
     employer: "", netMonthlyIncome: "",
-    loanAmount: 1000,
     consent: false, privacy: false,
   });
 
@@ -68,8 +67,8 @@ export default function InstantLoanDetailsForm() {
       <Form onSubmit={submit}>
         {/* PERSONAL */}
         <Row className="g-3">
-          <Col md={4}><Form.Control name="first"  placeholder="First name" required onChange={change} /></Col>
-          <Col md={4}><Form.Control name="last"   placeholder="Last name"  required onChange={change} /></Col>
+          <Col md={4}><Form.Control name="firstName"  placeholder="First name" required onChange={change} /></Col>
+          <Col md={4}><Form.Control name="lastName"   placeholder="Last name"  required onChange={change} /></Col>
           <Col md={4}><Form.Control name="dob"    type="date" placeholder="DOB" required onChange={change} /></Col>
           <Col md={4}><Form.Control name="email"  type="email" placeholder="Email" required onChange={change} /></Col>
           <Col md={4}><Form.Control name="phone"  placeholder="Phone" required onChange={change} /></Col>

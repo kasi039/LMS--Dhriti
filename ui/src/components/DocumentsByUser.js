@@ -1,11 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { Button } from 'react-bootstrap';
 
 
 function Userdocuments() {
     const { id: applicationId } = useParams(); 
     const[documents, setDocuments] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
 
@@ -46,6 +48,9 @@ function Userdocuments() {
                             ))}
                         </tbody>
                     </table>
+                    <div className="last-button mt-5 d-flex justify-content-center">
+                        <Button variant="info" className="w-25" onClick={() => navigate(`/applicationdetails/${applicationId}`)}>Go back</Button>
+                    </div>
                 </div>
             );
         }

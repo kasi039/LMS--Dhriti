@@ -1,4 +1,3 @@
-// src/pages/loan/BusinessLoanDocuments.jsx
 import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Form, Button, ProgressBar } from "react-bootstrap";

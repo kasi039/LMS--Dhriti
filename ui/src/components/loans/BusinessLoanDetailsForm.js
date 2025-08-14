@@ -7,7 +7,7 @@ export default function BusinessLoanDetailsForm() {
   const navigate = useNavigate();
   const [form, setForm] = useState({
     /* owner */
-    ownerFirst:"", ownerLast:"", ownerEmail:"", ownerPhone:"",
+    ownerFirstName:"", ownerLastName:"", ownerEmail:"", ownerPhone:"",
     /* business */
     businessName:"", tradeName:"", regNumber:"", street:"", city:"", province:"", postalCode:"",
     startDate:"", industry:"", employees:"", revenue:"",
@@ -70,8 +70,8 @@ export default function BusinessLoanDetailsForm() {
         {/* OWNER */}
         <h5>Owner information</h5>
         <Row className="g-3">
-          <Col md={4}><Form.Control name="ownerFirst" placeholder="First name" required onChange={handleChange}/></Col>
-          <Col md={4}><Form.Control name="ownerLast"  placeholder="Last name"  required onChange={handleChange}/></Col>
+          <Col md={4}><Form.Control name="ownerFirstName" placeholder="First name" required onChange={handleChange}/></Col>
+          <Col md={4}><Form.Control name="ownerLastName"  placeholder="Last name"  required onChange={handleChange}/></Col>
           <Col md={4}><Form.Control name="ownerEmail" type="email" placeholder="Email" required onChange={handleChange}/></Col>
           <Col md={4}><Form.Control name="ownerPhone" placeholder="Phone" required onChange={handleChange}/></Col>
         </Row>

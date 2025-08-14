@@ -1,16 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Form, Row, Col, Button, Image, Spinner } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
 import defaultAvatar from '../assets/account.png';
 
 function UserApplications() {
     const [user, setUser] = useState(null);
     const [form, setForm] = useState({ name: "", email: "", phone: "" });
     const [preview, setPreview] = useState(null); 
-    const [saving, setSaving] = useState(false);
     const [applications, setApplications] = useState([]);
-    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -127,8 +124,8 @@ function UserApplications() {
                     </Row>
 
                     <div className="d-flex justify-content-center mt-4">
-                        <Button type="submit" variant="primary" disabled={saving}>
-                            {saving ? "Saving…" : "Save changes"}
+                        <Button type="submit" variant="primary">
+                            Save changes
                         </Button>
                     </div>
                 </Form>
@@ -147,7 +144,6 @@ function UserApplications() {
                                 <th>Amount</th>
                                 <th>Date Applied</th>
                                 <th>Status</th>
-                                <th>Documents</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -169,14 +165,6 @@ function UserApplications() {
                                                 application.status === 'rejected' ? 'text-danger' : ''
                                     }>
                                         <b>{application.status}</b>
-                                    </td>
-                                    <td>
-                                        <Button
-                                            variant="primary"
-                                            onClick={() => navigate(`/userdocuments/${application._id}`)}
-                                        >
-                                            View Documents Uploaded
-                                        </Button>
                                     </td>
                                 </tr>
                             ))}
