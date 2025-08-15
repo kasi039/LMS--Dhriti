@@ -35,7 +35,7 @@ function AuthPage({ onUserChange }) {
         if (res.status === 201) {
           alert(" User registered successfully!");
           onUserChange(data.user); 
-          navigate("/services"); //  Go to Services page after registration
+          navigate("/services"); 
         } else {
           alert(` ${data.message || "Error registering user"}`);
         }

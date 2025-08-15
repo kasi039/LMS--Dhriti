@@ -37,3 +37,14 @@ exports.postPayment = async(req, res) => {
     res.json({message: 'Payment Successfull', payment});
 }
 
+
+exports.getAllPayments = async(req, res) => {
+  try{
+    const payments = await Payment.find().populate("userId", "name").populate("applicationId", "remainingAmount");
+    res.status(200).json(payments);
+  }
+  catch(error){
+    res.status(500).json({message: 'error retreiving payments', error});
+  }
+}
+

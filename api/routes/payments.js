@@ -7,4 +7,6 @@ router.post('/create-TheStripe-Section', Payment.createStripeCheckout);
 
 router.post('/createPayment', Payment.postPayment);
 
+router.get('/getallpayments', Payment.getAllPayments)
+
 module.exports = router;

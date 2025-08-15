@@ -59,7 +59,7 @@ function LoanPayment() {
                     <p className="fs-5">Installment Amount: <strong>${installmentAmount}</strong></p>
                 </div>
                 <div className="col-12 d-flex justify-content-center">
-                    {(Loan.remainingAmount === 0 ? <p className="text-success text-center">You have Cleared all your dues!</p>:
+                    {(Loan.remainingAmount === 0 ? <p className="text-success text-center fw-bold fs-6">You have Cleared all your dues!</p>:
                     <Button variant="success" onClick = {() => payInstallment() }>Pay Now</Button>)}
                 </div>
             </div>

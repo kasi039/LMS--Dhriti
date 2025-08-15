@@ -32,6 +32,8 @@ import LoanPayment from "./components/PaymentPage";
 import PaymentSuccess from "./components/PaymentSuccess";
 import PaymentFailed from "./components/PaymentFailed";
 import Allapprovedapplications from "./components/Allapprovedpayments";
+import AddUser from "./components/AddUser";
+import Allpayments from "./components/Allpayments";
 
 import "../src/css/App.css";
 import "../src/css/AuthPage.css";
@@ -80,6 +82,8 @@ function App() {
           <Route path="/payment-success" element={<PaymentSuccess />} />
           <Route path="/payment-failed" element={<PaymentFailed />} />
           <Route path="/Allapprovedapplications" element = {<Allapprovedapplications />}/>
+          <Route path="/AddUserByAdmin" element={<AddUser/>}/>
+          <Route path="/Allpayments" element={<Allpayments/>}/>
         </Routes>
         <Footer />
       </div>

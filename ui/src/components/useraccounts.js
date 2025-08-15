@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import {Button} from 'react-bootstrap';
 
 function UserAccounts() {
     const [users, setUsers] = useState([]);
@@ -42,13 +43,15 @@ function UserAccounts() {
     
     return (
         <div className="user-accounts-container">
-        <h1>User Accounts</h1>
-        <table className="table table-striped w-75 mx-auto mt-5">
+        <h1 className="headings">User Accounts</h1>
+        <Button variant="primary" onClick={()=> navigate('/AddUserByAdmin')} className="mb-5">Add User</Button>
+        <table className="table table-striped w-75 mx-auto">
             <thead>
             <tr>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Phone</th>
+                <th>Role</th>
                 <th>Delete</th>
                 <th>Edit</th>
             </tr>
@@ -59,6 +62,7 @@ function UserAccounts() {
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>{user.phone}</td>
+                <td>{user.role}</td>
                 <td>
                     <button className="btn btn-warning" onClick={() => navigate(`/editform/${user._id}`) }>Edit</button>
                 </td>

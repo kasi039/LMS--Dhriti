@@ -90,7 +90,10 @@ function Navbarfunction({userChanged }) {
 
 
            {user?.role === 'admin' && (
+            <>
               <Nav.Link className="NavLink" as={Link} to="/admin">Admin Dashboard</Nav.Link>
+              <Nav.Link className="NavLink" as={Link} to="/Allpayments">Payments</Nav.Link>
+            </>
            )}
 
 

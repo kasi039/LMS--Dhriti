@@ -38,7 +38,7 @@ function Allapprovedapplications(){
             </p>
             <p className="fs-5">Loan Type: <strong>{application.loanType}</strong></p>
             <p className="fs-5">
-                Loan Amount: <strong className="text-success fw-bold">{application.amount}</strong>
+                Loan Amount: <strong className="text-success fw-bold">${application.amount}</strong>
             </p>
             <p className="fs-5">Applied Date: <strong>{application.applicationDate}</strong></p>
             <p className="fs-5">
