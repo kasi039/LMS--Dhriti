@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Form, Row, Col, Button } from "react-bootstrap";
 
 export default function StudentLoanDetailsForm() {
-  const [params] = useSearchParams();
   const navigate  = useNavigate();
 
   const [form, setForm] = useState({

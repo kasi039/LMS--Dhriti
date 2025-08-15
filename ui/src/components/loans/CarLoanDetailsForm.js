@@ -70,9 +70,9 @@ export default function CarLoanDetailsForm() {
         {/* PERSONAL */}
         <h5>Personal information</h5>
         <Row className="g-3">
-          <Col md={4}><Form.Control name="first"  placeholder="First name"  required onChange={change}/></Col>
-          <Col md={4}><Form.Control name="middle" placeholder="Middle name"           onChange={change}/></Col>
-          <Col md={4}><Form.Control name="last"   placeholder="Last name"   required onChange={change}/></Col>
+          <Col md={4}><Form.Control name="firstName"  placeholder="First name"  required onChange={change}/></Col>
+          <Col md={4}><Form.Control name="middleName" placeholder="Middle name"           onChange={change}/></Col>
+          <Col md={4}><Form.Control name="lastName"   placeholder="Last name"   required onChange={change}/></Col>
           <Col md={4}><Form.Control name="dob" type="date" required onChange={change}/></Col>
           <Col md={4}><Form.Control name="email" type="email" placeholder="Email" required onChange={change}/></Col>
           <Col md={4}><Form.Control name="phone" placeholder="Mobile phone" required onChange={change}/></Col>

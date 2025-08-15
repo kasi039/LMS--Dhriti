@@ -2,12 +2,16 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Form, Row, Col, Button, Image, Spinner } from "react-bootstrap";
 import defaultAvatar from '../assets/account.png';
+import { useNavigate } from "react-router-dom";
+
 
 function UserApplications() {
     const [user, setUser] = useState(null);
     const [form, setForm] = useState({ name: "", email: "", phone: "" });
     const [preview, setPreview] = useState(null); 
     const [applications, setApplications] = useState([]);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -144,6 +148,7 @@ function UserApplications() {
                                 <th>Amount</th>
                                 <th>Date Applied</th>
                                 <th>Status</th>
+                                <th>Payment</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -165,6 +170,9 @@ function UserApplications() {
                                                 application.status === 'rejected' ? 'text-danger' : ''
                                     }>
                                         <b>{application.status}</b>
+                                    </td>
+                                    <td>
+                                        {(application.status == 'approved')? <Button variant="success" onClick={() => navigate(`/paynow/${application._id}`)}>Pay</Button> : <p className="text-muted">No Payment</p>}
                                     </td>
                                 </tr>
                             ))}

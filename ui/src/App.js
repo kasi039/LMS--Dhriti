@@ -27,7 +27,11 @@ import GoldLoanDocuments   from "./components/loans/GoldLoanDocuments";
 import InstantLoanDetailsForm from "./components/loans/InstantLoanDetailsForm";
 import InstantLoanDocuments   from "./components/loans/InstantLoanDocuments";
 import AboutUsPage from "./components/AboutUsPage";
-import GetTheApplicationDetails from "./components/ApplicationDetails"
+import GetTheApplicationDetails from "./components/ApplicationDetails";
+import LoanPayment from "./components/PaymentPage";
+import PaymentSuccess from "./components/PaymentSuccess";
+import PaymentFailed from "./components/PaymentFailed";
+import Allapprovedapplications from "./components/Allapprovedpayments";
 
 import "../src/css/App.css";
 import "../src/css/AuthPage.css";
@@ -72,7 +76,10 @@ function App() {
           <Route path="/applyloan/docs/instant"     element={<InstantLoanDocuments />} />
           <Route path="/about" element={<AboutUsPage />} />
           <Route path="/applicationdetails/:id" element={<GetTheApplicationDetails/>} />
-          {/* Add more routes as needed */}
+          <Route path="/paynow/:id" element={<LoanPayment/>} />
+          <Route path="/payment-success" element={<PaymentSuccess />} />
+          <Route path="/payment-failed" element={<PaymentFailed />} />
+          <Route path="/Allapprovedapplications" element = {<Allapprovedapplications />}/>
         </Routes>
         <Footer />
       </div>

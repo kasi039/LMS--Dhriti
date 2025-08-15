@@ -64,7 +64,7 @@ function Navbarfunction({userChanged }) {
             
             
             <Nav.Link className="NavLink" as={Link} to="/about">About Us</Nav.Link>
-            <Nav.Link className="NavLink" as={Link} to="/payments">Payments</Nav.Link>
+            <Nav.Link className="NavLink" as={Link} to="/Allapprovedapplications">Payments</Nav.Link>
             <NotificationIcon
                 className="notif-icon"
                 onClick={() => navigate("/notifications")}

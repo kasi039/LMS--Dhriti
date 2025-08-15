@@ -40,6 +40,9 @@ app.use('/api/applications', applicationRoutes);
 const uploadRoutes = require('./routes/uploadroutes');
 app.use('/api/documents', uploadRoutes);
 
+const payments = require('./routes/payments');
+app.use('/api/payments', payments);
+
 
 
 const PORT = process.env.PORT;

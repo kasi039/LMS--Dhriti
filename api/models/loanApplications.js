@@ -8,21 +8,22 @@ const loanSchema = new mongoose.Schema({
       enum: ['student', 'employee', 'business', 'home', 'car', 'gold', 'education', 'instant'],
       required: true,
     },
-  amount: Number,
+    amount: Number,
+    remainingAmount: { 
+      type: Number, 
+      default: function() { 
+        return this.amount; 
+      }
+    },
 
   details: {
       type: Schema.Types.Mixed,  
       default: {},
     },
-
+  interestRate: {type: Number, default: 9.8},
 
   applicationDate: { type: Date, default: Date.now },
   status: { type: String, enum: ['pending', 'approved', 'rejected'], default: 'pending' },
-
-
-
-
-
 });
 
 module.exports = mongoose.model('LoanApplication', loanSchema);
