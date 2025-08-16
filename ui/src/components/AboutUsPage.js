@@ -64,7 +64,7 @@ export default function AboutUsPage() {
               platform, we are an ecosystem that also solves youth needs for insurance,
               jobs and upskilling.
             </p>
-            <Button class="apply_btn" size="sm">Apply for Loan</Button>
+            <Button className="apply_btn mb-5" size="sm">Apply for Loan</Button>
           </Col>
 
           <Col md={4} className="stats-col">
@@ -99,7 +99,7 @@ export default function AboutUsPage() {
 
       {/* ─── WHY-US GRID ─── */}
       <section className="why-us container">
-        <h4>Why Us?</h4>
+        <h4 className="text-center">Why Us?</h4>
         <Row xs={1} md={4} className="g-4">
           {why.map(({ text, Icon }) => (
             <Col key={text}>

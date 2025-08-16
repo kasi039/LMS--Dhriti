@@ -51,76 +51,76 @@ function Navbarfunction({userChanged }) {
 
   return (
     <Navbar expand="lg" className={`d-flex justify-content-between ${user ? "navbar-logged" : "navbar-public"}`}>
-      <Container fluid className="d-flex justify-content-between align-items-center">
+      <Container fluid>
         <Navbar.Brand>
           <a href="/">
             <Logo className="logo-icon" />
           </a>
         </Navbar.Brand>
+
+        {/* Toggle button for mobile */}
+        <Navbar.Toggle aria-controls="navbar-nav" className="border-0" />
+
+        <Navbar.Collapse id="navbar-nav" className="justify-content-end">
           <Nav className="align-items-center">
-           {user && user?.role !== 'admin' && (
-            <>
-            <Nav.Link className="NavLink" as={Link} to= "/services">Services</Nav.Link>
-            
-            
-            <Nav.Link className="NavLink" as={Link} to="/about">About Us</Nav.Link>
-            <Nav.Link className="NavLink" as={Link} to="/Allapprovedapplications">Payments</Nav.Link>
-            <NotificationIcon
-                className="notif-icon"
-                onClick={() => navigate("/notifications")}
-                title="Notifications"
-              />
-              <SearchIcon
-                className="search-icon"
-                onClick={() => navigate("/search")}
-                title="Search"
-              />
+            {user && user?.role !== 'admin' && (
+              <>
+                <Nav.Link className="NavLink" as={Link} to="/services">Services</Nav.Link>
+                <Nav.Link className="NavLink" as={Link} to="/about">About Us</Nav.Link>
+                <Nav.Link className="NavLink" as={Link} to="/Allapprovedapplications">Payments</Nav.Link>
+                <NotificationIcon
+                  className="notif-icon"
+                  onClick={() => navigate("/notifications")}
+                  title="Notifications"
+                />
+                <SearchIcon
+                  className="search-icon"
+                  onClick={() => navigate("/search")}
+                  title="Search"
+                />
+              </>
+            )}
 
-            </>
-           )}
+            {!user && (
+              <>
+                <Nav.Link className="NavLink" as={Link} to="/Auth">Services</Nav.Link>
+                <Nav.Link className="NavLink" as={Link} to="/Auth">Student Loan</Nav.Link>
+                <Nav.Link className="NavLink" as={Link} to="/Auth">About Us</Nav.Link>
+                <Nav.Link className="NavLink get-loan-button" as={Link} to="/Auth">Get Loan</Nav.Link>
+              </>
+            )}
 
-           {!user && (
-            <>
-            <Nav.Link className="NavLink" as={Link} to= "/Auth">Services</Nav.Link>
-            <Nav.Link className="NavLink" as={Link} to="/Auth">Student Loan</Nav.Link>
-            <Nav.Link className="NavLink" as={Link} to="/Auth">About Us</Nav.Link>
-            <Nav.Link className="NavLink get-loan-button" as={Link} to="/Auth">Get Loan</Nav.Link>
-            </>
-           )}
+            {user?.role === 'admin' && (
+              <>
+                <Nav.Link className="NavLink" as={Link} to="/admin">Admin Dashboard</Nav.Link>
+                <Nav.Link className="NavLink" as={Link} to="/Allpayments">Payments</Nav.Link>
+              </>
+            )}
 
-
-           {user?.role === 'admin' && (
-            <>
-              <Nav.Link className="NavLink" as={Link} to="/admin">Admin Dashboard</Nav.Link>
-              <Nav.Link className="NavLink" as={Link} to="/Allpayments">Payments</Nav.Link>
-            </>
-           )}
-
-
-          <div className="d-flex align-items-center">
-            {!user ?  (<>
-               <SigninIcon onClick={() => navigate('/Auth')} className="signinicon" />
-            </>) :
-            <Dropdown align="end">
-                <Dropdown.Toggle className="bg-transparent border-0 p-0">
-                  <Profile className="profileicon nav-icon"/>
-                </Dropdown.Toggle>
-              <Dropdown.Menu>
-                { user ? (
-                  <>
-                  <Dropdown.Item onClick={(e) =>{e.preventDefault(); logoutuser();}}>Logout</Dropdown.Item>
-                  <Dropdown.Item onClick={() => navigate("/userapplications")}>My Profile</Dropdown.Item>
-                  </>
-                  ):(<Dropdown.Item onClick={() => navigate('/Auth')}>LogIn</Dropdown.Item>) }
-                
-              </Dropdown.Menu>
-            </Dropdown>
-           }
-                     
-          </div>
+            <div className="d-flex align-items-center mt-3 mt-lg-0">
+              {!user ? (
+                <SigninIcon onClick={() => navigate('/Auth')} className="signinicon" />
+              ) : (
+                <Dropdown align="end">
+                  <Dropdown.Toggle className="bg-transparent border-0 p-0">
+                    <Profile className="profileicon nav-icon" />
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu>
+                    <Dropdown.Item onClick={(e) => { e.preventDefault(); logoutuser(); }}>
+                      Logout
+                    </Dropdown.Item>
+                    <Dropdown.Item onClick={() => navigate("/userapplications")}>
+                      My Profile
+                    </Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
+              )}
+            </div>
           </Nav>
+        </Navbar.Collapse>
       </Container>
     </Navbar>
+
   );
 }
 

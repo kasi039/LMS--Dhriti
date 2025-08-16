@@ -160,3 +160,50 @@
 }
 
 .why-icon { width: 40px; height: 40px; }
+
+
+/* ===== Responsive Styles ===== */
+
+/* Tablets (stack timeline items better) */
+@media (max-width: 992px) {
+  .timeline {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .timeline::before,
+  .timeline::after {
+    display: none; /* hide connecting bar on tablets/mobile */
+  }
+
+  .timeline-item,
+  .tail-dot {
+    position: relative;
+  }
+}
+
+/* Mobile (stack everything vertically) */
+@media (max-width: 576px) {
+  .hero-card {
+    text-align: center;
+  }
+
+  .stats-col {
+    grid-template-columns: 1fr; /* 1 column instead of 2 */
+  }
+
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .why-us .row {
+    row-gap: 1.2rem;
+  }
+}
+

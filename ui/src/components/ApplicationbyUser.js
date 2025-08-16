@@ -140,6 +140,7 @@ function UserApplications() {
                 {applications.length === 0 ? (
                     <h3 className="text-muted mt-5"><b>No Applications Submitted</b></h3>
                 ) : (
+                    <div className="table-responsive">
                     <table className="table table-striped w-100 mx-auto mt-5">
                         <thead>
                             <tr>
@@ -182,6 +183,7 @@ function UserApplications() {
                             ))}
                         </tbody>
                     </table>
+                    </div>
                 )}
             </div>
         </>

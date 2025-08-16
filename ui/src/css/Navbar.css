@@ -54,3 +54,27 @@
 .navbar-logged{
   background:#0057A3; 
 }
+
+
+/* Make icons stack nicely on mobile */
+@media (max-width: 991px) {
+  .NavLink {
+    margin-left: 0;
+    margin-top: 0.5rem;
+    display: block;
+    text-align: center;
+  }
+
+  .signinicon, 
+  .profileicon, 
+  .notif-icon, 
+  .search-icon {
+    margin: 1rem auto;
+    display: block;
+  }
+
+  .navbar {
+    height: auto;
+    padding: 10px;
+  }
+}

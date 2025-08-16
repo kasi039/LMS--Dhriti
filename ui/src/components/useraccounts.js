@@ -45,6 +45,7 @@ function UserAccounts() {
         <div className="user-accounts-container">
         <h1 className="headings">User Accounts</h1>
         <Button variant="primary" onClick={()=> navigate('/AddUserByAdmin')} className="mb-5">Add User</Button>
+        <div className="table-responsive">
         <table className="table table-striped w-75 mx-auto">
             <thead>
             <tr>
@@ -73,6 +74,7 @@ function UserAccounts() {
             ))}
             </tbody>
         </table>
+        </div>
         </div>
     );
 }

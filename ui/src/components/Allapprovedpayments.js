@@ -33,7 +33,7 @@ function Allapprovedapplications(){
         {applications
         .filter(app => app.status === 'approved')
         .map(application => (
-                <div key={application._id} className="container mb-5 w-50 mx-auto rounded shadow py-5">
+                <div key={application._id} className="mb-5 approved-div mx-auto rounded shadow py-5">
                 <div className="row w-100 justify-content-end g-3">
                     <div className="col-8">
                     <p className="fs-5">

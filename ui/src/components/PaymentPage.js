@@ -41,7 +41,7 @@ function LoanPayment() {
     return(
         <>
         <h1 className="headings text-center">Payment for application: {applicationId}</h1>
-        <div className="container w-25 mx-auto bg-light rounded mb-5 p-5 shadow">
+        <div className="container w-50 w-md-25 mx-auto bg-light rounded mb-5 p-5 shadow">
             <div class="row w-100 justify-content-end g-3">
                 <div className="col-12">
                     <p className="fs-5">Loan type: <strong>{Loan.loanType}</strong></p>

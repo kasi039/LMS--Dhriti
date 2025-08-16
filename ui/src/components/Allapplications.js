@@ -55,6 +55,7 @@ function AllApplications() {
             <h1 className="headings">All Users Applications</h1>
             {applications.length === 0 ? <h2 className="mb-5 text-muted fw-bold">No Applications Submitted</h2>:
             <>
+            <div className="table-responsive">
             <table className="table table-striped w-100 mx-auto mt-5">
                 <thead>
                     <tr>
@@ -86,6 +87,7 @@ function AllApplications() {
                     ))}
                 </tbody>
             </table> 
+            </div>
             </>
             }
         </div>
