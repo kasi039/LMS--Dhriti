@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import '../css/HelpPage.css'; // Import your CSS styles
+import '../css/HelpPage.css'; 
 
 export default function HelpFab() {
   const navigate = useNavigate();

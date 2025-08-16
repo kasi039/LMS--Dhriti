@@ -131,9 +131,10 @@
 }
 
 /* Simple primary button for the hero */
-.btn {
+.button-modeled {
   background: none;
-  color: #0057A3;
+  background-color: #0057A3;
+  color: white;
   padding: 12px 24px;
   font-size: 18px;
   font-weight: bold;
@@ -144,8 +145,9 @@
   transition: background 0.3s ease;
 }
 
-.btn:hover {
+.button-modeled:hover {
   background: #d9e6f2;
+  color:black
 }
 
 /* Responsive tweaks */

@@ -3,28 +3,37 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/white-logo.svg";
 import "../css/FooterPage.css";
+import { useLocation } from "react-router-dom";
 
 function Footer() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    (async () => {
+    const fetchSessionUser = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/users/session-user", {
-          credentials: "include",
+        const res = await fetch('http://localhost:5000/api/users/session-user', {
+          credentials: 'include',
         });
-        if (!res.ok) throw new Error("Not logged in");
+        if (!res.ok) throw new Error('Not logged in');
         const data = await res.json();
+        console.log("Fetched session user:", data);
         setUser(data.user);
-      } catch {
+      } catch (err) {
+        console.log("Fetched session user error:", err);
         setUser(null);
+      } finally{
+        setLoading(false);
       }
-    })();
-  }, []);
+    };
+    fetchSessionUser();
+  }, [location]);
 
   // Helper: go to path if logged in, else go to /Auth
   const go = (authedPath) => {
+    if(loading) return;
     if (user) navigate(authedPath);
     else navigate("/Auth");
   };
@@ -43,7 +52,7 @@ function Footer() {
             <h4>Services</h4>
             <ul>
               <li>
-                <button className="footer-link-btn" onClick={() => go("/applyloan")}>
+                <button className="footer-link-btn" onClick={() => go("/services")}>
                   Apply for Loan
                 </button>
               </li>
@@ -53,7 +62,7 @@ function Footer() {
                 </button>
               </li>
               <li>
-                <button className="footer-link-btn" onClick={() => go("/payments")}>
+                <button className="footer-link-btn" onClick={() => go("/Allapprovedapplications")}>
                   Payments
                 </button>
               </li>
@@ -74,17 +83,17 @@ function Footer() {
                 </button>
               </li>
               <li>
-                <button className="footer-link-btn" onClick={() => go("/AboutUsPage")}>
+                <button className="footer-link-btn" onClick={() => navigate("/about")}>
                   About Us
                 </button>
               </li>
               <li>
-                <button className="footer-link-btn" onClick={() => go("/help")}>
+                <button className="footer-link-btn" onClick={() => navigate("/help")}>
                   Help Center
                 </button>
               </li>
               <li>
-                <button className="footer-cta-btn" onClick={() => go("/Auth")}>
+                <button className="footer-cta-btn" onClick={() => go("/userapplications")}>
                   {user ? "My Account" : "Sign In / Get Loan"}
                 </button>
               </li>
@@ -95,22 +104,22 @@ function Footer() {
             <h4>Loans</h4>
             <ul>
               <li>
-                <button className="footer-link-btn" onClick={() => go("/auth")}>
+                <button className="footer-link-btn" onClick={() => go("/applyloan/details/student")}>
                   Student Loan
                 </button>
               </li>
               <li>
-                <button className="footer-link-btn" onClick={() => go("/auth")}>
+                <button className="footer-link-btn" onClick={() => go("/applyloan/details/home")}>
                   Home Loan
                 </button>
               </li>
               <li>
-                <button className="footer-link-btn" onClick={() => go("/auth")}>
+                <button className="footer-link-btn" onClick={() => go("/applyloan/details/car")}>
                   Car Loan
                 </button>
               </li>
               <li>
-                <button className="footer-link-btn" onClick={() => go("/auth")}>
+                <button className="footer-link-btn" onClick={() => go("/applyloan/docs/business")}>
                   Business Loan
                 </button>
               </li>
@@ -129,6 +138,7 @@ function Footer() {
           </div>
           <div className="footer-copy">
             <p>Copyright © 2025 Dhriti Tech Solutions Private Limited</p>
+            <p>Copyright © Kasi Philips Sannihith</p>
             <p>All Rights Reserved</p>
           </div>
         </div>

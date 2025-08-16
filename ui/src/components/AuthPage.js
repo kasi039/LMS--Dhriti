@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash } from "react-icons/fa"; // 👈 Eye icons
+import { FaEye, FaEyeSlash } from "react-icons/fa"; 
 
 function AuthPage({ onUserChange }) {
   const [isSignUp, setIsSignUp] = useState(true);

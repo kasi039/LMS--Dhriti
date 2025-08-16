@@ -27,7 +27,7 @@ function HomePage() {
               Ready to invest in your future, but concerned about the financial hurdles along the way? Dhriti is your Instant Loan App for quick financial solutions in India. As a trusted credit loan app, we are here to help you navigate the world of personal loans with confidence and clarity.
             </p>
             <div className="hero-buttons">
-              <button className="btn" onClick={() => navigate('/Auth')}>
+              <button className="button-modeled" onClick={() => navigate('/Auth')}>
                 Apply Now
               </button>
             </div>

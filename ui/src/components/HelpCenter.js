@@ -180,7 +180,7 @@ export default function HelpCenter() {
             </Card>
           </Col>
           <Col md={3} sm={6}>
-            <Card className="help-tile h-100" onClick={() => go("/payments")} role="button">
+            <Card className="help-tile h-100" onClick={() => go("/Allapprovedapplications")} role="button">
               <Card.Body>
                 <div className="tile-icon">💳</div>
                 <Card.Title>Payments</Card.Title>
@@ -383,7 +383,7 @@ export default function HelpCenter() {
             <Button variant="outline-primary" onClick={() => go("/userapplications")}>
               Check My Status
             </Button>
-            <Button variant="outline-primary" onClick={() => go("/payments")}>
+            <Button variant="outline-primary" onClick={() => go("/Allapprovedapplications")}>
               Pay an Installment
             </Button>
             <Button variant="outline-secondary" onClick={() => go("/services")}>
