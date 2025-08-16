@@ -79,9 +79,9 @@ function AllApplications() {
                             <td>{application.applicationDate.split('T')[0]}</td>
                             <td>{application.userId.name}</td>
                             <td className={application.status === 'pending'? 'text-warning': application.status==='approved'? 'text-success': application.status === 'rejected'? 'text-danger' : ''}><b>{application.status}</b></td>
-                            <td>
+                            <td className="d-flex justify-content-center gap-2">
                                 <Button variant="primary" onClick={() => navigate(`/applicationdetails/${application._id}`)} >View Details</Button>
-                                <Button variant="danger" className="ms-2" onClick={() => DeleteApplication(application._id) } >Delete Application</Button>
+                                <Button variant="danger" onClick={() => DeleteApplication(application._id) } >Delete Application</Button>
                             </td>
                         </tr>
                     ))}

@@ -50,7 +50,7 @@ function Navbarfunction({userChanged }) {
     }
 
   return (
-    <Navbar expand="lg" className={`d-flex justify-content-between ${user ? "navbar-logged" : "navbar-public"}`}>
+    <Navbar expand="md" className={`d-flex justify-content-between ${user ? "navbar-logged" : "navbar-public"}`}>
       <Container fluid>
         <Navbar.Brand>
           <a href="/">
@@ -58,15 +58,14 @@ function Navbarfunction({userChanged }) {
           </a>
         </Navbar.Brand>
 
-        {/* Toggle button for mobile */}
         <Navbar.Toggle aria-controls="navbar-nav" className="border-0" />
 
         <Navbar.Collapse id="navbar-nav" className="justify-content-end">
           <Nav className="align-items-center">
+            <Nav.Link className="NavLink" as={Link} to="/about">About Us</Nav.Link>
             {user && user?.role !== 'admin' && (
               <>
                 <Nav.Link className="NavLink" as={Link} to="/services">Services</Nav.Link>
-                <Nav.Link className="NavLink" as={Link} to="/about">About Us</Nav.Link>
                 <Nav.Link className="NavLink" as={Link} to="/Allapprovedapplications">Payments</Nav.Link>
                 <NotificationIcon
                   className="notif-icon"
@@ -80,7 +79,6 @@ function Navbarfunction({userChanged }) {
               <>
                 <Nav.Link className="NavLink" as={Link} to="/Auth">Services</Nav.Link>
                 <Nav.Link className="NavLink" as={Link} to="/Auth">Student Loan</Nav.Link>
-                <Nav.Link className="NavLink" as={Link} to="/Auth">About Us</Nav.Link>
                 <Nav.Link className="NavLink get-loan-button" as={Link} to="/Auth">Get Loan</Nav.Link>
               </>
             )}
