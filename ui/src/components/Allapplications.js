@@ -52,13 +52,16 @@ function AllApplications() {
 
     return (
         <div className="user-accounts-container container">
-            <h1 className="mb-5">All Users Applications</h1>
+            <h1 className="headings">All Users Applications</h1>
+            {applications.length === 0 ? <h2 className="mb-5 text-muted fw-bold">No Applications Submitted</h2>:
+            <>
             <table className="table table-striped w-100 mx-auto mt-5">
                 <thead>
                     <tr>
                         <th>Application ID</th>
                         <th>Loan Type</th>
                         <th>Amount</th>
+                        <th>Amount Due</th>
                         <th>Date Applied</th>
                         <th>Applicant Name</th>
                         <th>Status</th>
@@ -71,6 +74,7 @@ function AllApplications() {
                             <td className={application.status === 'pending'? 'text-warning': application.status==='approved'? 'text-success': application.status === 'rejected'? 'text-danger' : ''}><b>{application._id}</b></td>
                             <td>{application.loanType}</td>
                             <td>$ {application.amount}</td>
+                            <td>{application.status === 'approved'? <p className="text-danger fw-bold">${application.remainingAmount}</p> : <p className="text-muted">Not Applicable</p>}</td>
                             <td>{application.applicationDate.split('T')[0]}</td>
                             <td>{application.userId.name}</td>
                             <td className={application.status === 'pending'? 'text-warning': application.status==='approved'? 'text-success': application.status === 'rejected'? 'text-danger' : ''}><b>{application.status}</b></td>
@@ -82,6 +86,8 @@ function AllApplications() {
                     ))}
                 </tbody>
             </table> 
+            </>
+            }
         </div>
     );
 }

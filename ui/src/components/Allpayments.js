@@ -20,9 +20,11 @@ function Allpayments() {
     },[]);
 
     return(
-        
+
         <div className="user-accounts-container">
-        <h1 className="headings">Payments</h1>
+        <h1 className="headings text-center">Payments</h1>
+        {payments.length === 0 ? <h2 className="text-center fw-bold text-muted">No Payments Available</h2>:
+        <>
         <table className="table table-striped w-75 mx-auto">
             <thead>
             <tr>
@@ -47,6 +49,9 @@ function Allpayments() {
             ))}
             </tbody>
         </table>
+        
+        </>
+}
         </div>
     )
         

@@ -149,6 +149,7 @@ function UserApplications() {
                                 <th>Date Applied</th>
                                 <th>Status</th>
                                 <th>Payment</th>
+                                <th>Amount Due</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -163,7 +164,7 @@ function UserApplications() {
                                     </td>
                                     <td>{application.loanType}</td>
                                     <td>$ {application.amount}</td>
-                                    <td>{application.applicationDate}</td>
+                                    <td>{application.applicationDate.split('T')[0]}</td>
                                     <td className={
                                         application.status === 'pending' ? 'text-warning' :
                                             application.status === 'approved' ? 'text-success' :
@@ -172,7 +173,10 @@ function UserApplications() {
                                         <b>{application.status}</b>
                                     </td>
                                     <td>
-                                        {(application.status == 'approved')? <Button variant="success" onClick={() => navigate(`/paynow/${application._id}`)}>Pay</Button> : <p className="text-muted">No Payment</p>}
+                                        {(application.status === 'approved')? <Button variant="success" onClick={() => navigate(`/paynow/${application._id}`)}>Pay</Button> : <p className="text-muted">Not Applicable</p>}
+                                    </td>
+                                    <td>
+                                        {(application.status === 'approved')? <p className="text-danger fw-bold">${application.remainingAmount}</p> : <p className="text-muted">Not Applicable</p>}
                                     </td>
                                 </tr>
                             ))}
