@@ -41,26 +41,27 @@ function LoanPayment() {
     return(
         <>
         <h1 className="headings text-center">Payment for application: {applicationId}</h1>
-        <div className="container w-50 w-md-25 mx-auto bg-light rounded mb-5 p-5 shadow">
+        <div className="pay-div mx-auto bg-light rounded mb-5 p-5 shadow">
             <div class="row w-100 justify-content-end g-3">
+                <h4 className="text-center mb-5 fw-bold">Payment Details</h4>
                 <div className="col-12">
-                    <p className="fs-5">Loan type: <strong>{Loan.loanType}</strong></p>
+                    <p className="fs-5 pay-text">Loan type: <strong>{Loan.loanType}</strong></p>
                 </div>
                 <div className="col-12">
-                    <p className="fs-5">Loan Amount: <strong className="text-success">${Loan.amount}</strong></p>
+                    <p className="fs-5 pay-text">Loan Amount: <strong className="text-success">${Loan.amount}</strong></p>
                 </div>
                 <div className="col-12">
-                    <p className="fs-5">Remaining Amount: <strong className="text-warning">${Loan.remainingAmount}</strong></p>
+                    <p className="fs-5 pay-text">Remaining Amount: <strong className="text-warning">${Loan.remainingAmount}</strong></p>
                 </div>
                 <div className="col-12">
-                    <p className="fs-5">Interest Rate: <strong>{Loan.interestRate}%</strong></p>
+                    <p className="fs-5 pay-text">Interest Rate: <strong>{Loan.interestRate}%</strong></p>
                 </div>
                 <div className="col-12">
-                    <p className="fs-5">Installment Amount: <strong>${installmentAmount}</strong></p>
+                    <p className="fs-5 pay-text">Installment Amount: <strong>${installmentAmount}</strong></p>
                 </div>
                 <div className="col-12 d-flex justify-content-center">
                     {(Loan.remainingAmount === 0 ? <p className="text-success text-center fw-bold fs-6">You have Cleared all your dues!</p>:
-                    <Button variant="success" onClick = {() => payInstallment() }>Pay Now</Button>)}
+                    <Button variant="success" onClick = {() => payInstallment() }>Pay Installment Now</Button>)}
                 </div>
             </div>
         </div>

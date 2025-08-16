@@ -14,7 +14,7 @@ function Success() {
             <p className="text-center mt-3 success-subhead">Your application has been submitted successfully. We will review it and get back to you soon.</p>
             
             <div className="d-flex justify-content-center mt-4">
-                <Button variant="primary" className="bigButton" onClick={() => navigate("/")} >Go to Dashboard</Button>
+                <Button variant="primary" className="bigButton" onClick={() => navigate("/services")} >Go to Services</Button>
             </div>
         </div>
     )

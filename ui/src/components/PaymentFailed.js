@@ -15,7 +15,7 @@ export default function PaymentFailed() {
             
             
             <div className="d-flex justify-content-center mt-4">
-                <Button variant="primary" className="bigButton" onClick={() => navigate("/")} >Go to Dashboard</Button>
+                <Button variant="primary" className="bigButton" onClick={() => navigate("/services")} >Go to Services</Button>
             </div>
         </div>
     );

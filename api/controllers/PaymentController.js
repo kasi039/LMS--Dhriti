@@ -1,5 +1,7 @@
 const Payment = require('../models/Payment');
 const Loan = require('../models/loanApplications');
+const Notification = require('../models/Notifications');
+
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 exports.createStripeCheckout = async(req, res) => {
@@ -25,6 +27,7 @@ exports.createStripeCheckout = async(req, res) => {
 }
 
 exports.postPayment = async(req, res) => {
+  try{
     const {applicationId, amount, method} = req.body;
     const userId = req.session.user?.id; 
     const payment = new Payment ({applicationId, userId, amount, paymentMethod: method});
@@ -34,7 +37,15 @@ exports.postPayment = async(req, res) => {
     loan.remainingAmount -= amount;
     await loan.save();
 
+    const newNotification = new Notification({userId: payment.userId, message: `You have Successfully Paid your installment Amount of $${amount} for application with id ${payment.applicationId}`});
+    await newNotification.save();
+
     res.json({message: 'Payment Successfull', payment});
+  }
+  catch(error){
+    console.error('Error Occured', error);
+    res.status(500).json({message: 'error occured', Success: false});
+  }
 }
 
 

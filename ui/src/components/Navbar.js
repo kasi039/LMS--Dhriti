@@ -6,7 +6,7 @@ import { ReactComponent as Logo } from '../assets/logo.svg';
 import { ReactComponent as Profile } from '../assets/profile.svg'; 
 import { ReactComponent as SigninIcon } from '../assets/Signinicon.svg'; 
 import { ReactComponent as NotificationIcon } from "../assets/notification.svg";
-import { ReactComponent as SearchIcon }       from "../assets/search.svg";
+
 
 
 
@@ -72,11 +72,6 @@ function Navbarfunction({userChanged }) {
                   className="notif-icon"
                   onClick={() => navigate("/notifications")}
                   title="Notifications"
-                />
-                <SearchIcon
-                  className="search-icon"
-                  onClick={() => navigate("/search")}
-                  title="Search"
                 />
               </>
             )}

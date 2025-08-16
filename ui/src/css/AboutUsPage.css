@@ -1,16 +1,15 @@
-/* -------------- Global wrapper -------------- */
 .about-wrapper {
   background: #ffffff;
   padding-bottom: 4rem;
 }
 
-/* ========== HERO CARD =================================================== */
 .hero-card {
   background: #e4edf7;
   border-radius: 8px;
   padding: 2rem 1.5rem;
   margin-top: 1.5rem;
 }
+
 .apply_btn {
   background: #0057A3;
   color: #ffffff;
@@ -20,7 +19,6 @@
   text-decoration: none;
 }
 
-/* 4 statistic tiles in a 2 × 2 grid */
 .stats-col {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -34,107 +32,112 @@
   text-align: center;
 }
 
-/* icon + number + label */
-.stat-icon  { width: 24px; height: 24px; margin-bottom: 4px; fill: #0057A3; }
-.stat-value { font-size: 1.4rem; font-weight: 700; }
-.stat-label { font-size: 0.8rem; color: #606060; }
-
-/* colour helpers (all currently blue) */
-.stat-blue  { color: #0057A3; }
-
-/* ========== JOURNEY TIMELINE ============================================ */
-.journey { margin-top: 3rem; text-align: center; }
-
-/* container */
-.timeline{
-  position:relative;
-  margin-top:2.5rem;
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
+.stat-icon {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 4px;
+  fill: #0057A3;
 }
 
-/* ── CONNECTING BAR ─────────────────────────────── */
-/* full blue bar under the dots */
-.timeline::before{
-  content:"";
-  position:absolute;
-  left:0;               /* starts at first circle centre */
-  right:120px;          /* stop before dotted part */
-  top:34px;             /* vertically centres with dot (24px + 10px border) /2 */
-  height:3px;
-  background:#0057A3;
-  z-index:0;            /* sits behind the dots */
+.stat-value {
+  font-size: 1.4rem;
+  font-weight: 700;
 }
 
-/* dotted tail segment */
-.timeline::after{
-  content:"";
-  position:absolute;
-  right:0;
-  width:120px;
-  top:34px;
-  height:3px;
-  border-top:3px dotted #0057A3;
+.stat-label {
+  font-size: 0.8rem;
+  color: #606060;
 }
 
-/* ── INDIVIDUAL ITEMS ──────────────────────────── */
-.timeline-item{
-  flex:1;
-  min-width:120px;
-  text-align:center;
-  position:relative;
+.stat-blue {
+  color: #0057A3;
 }
 
-/* year pill */
-.pill-year{
-  display:inline-block;
-  background:#0057A3;
-  color:#ffffff;
-  font-weight:600;
-  padding:4px 20px;
-  border-radius:8px;
-  margin-bottom:10px;
-  font-size:0.85rem;
- 
+.journey {
+  margin-top: 3rem;
+  text-align: center;
 }
 
-/* blue circle */
-.dot{
-  width:24px; height:24px;
-  border:4px solid #0057A3;
-  border-radius:50%;
-  background:#ffffff;
-  margin:0 auto;
-  position:relative;
-  z-index: 1;         /* 34px - (dot radius) */
-           /* ensure it sits above the bar */
+.timeline {
+  position: relative;
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-/* final circle (after dotted tail) */
-.tail-dot{
-  position:absolute;
-  right:-12px;          /* half dot width to align with tail */
-  top:22px;             /* 34px - (dot radius) */
-  width:24px; height:24px;
-  border:4px solid #0057A3;
-  border-radius:50%;
-  background:#ffffff;
-  z-index:1;
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 120px;
+  top: 34px;
+  height: 3px;
+  background: #0057A3;
+  z-index: 0;
 }
 
-/* caption under each dot */
-.timeline-item p{
-  font-size:0.75rem;
-  margin-top:0.6rem;
-  line-height:1.25;
+.timeline::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 120px;
+  top: 34px;
+  height: 3px;
+  border-top: 3px dotted #0057A3;
 }
 
+.timeline-item {
+  flex: 1;
+  min-width: 120px;
+  text-align: center;
+  position: relative;
+}
 
-/* ========== WHY-US GRID ================================================== */
-.why-us { margin-top: 3rem; }
+.pill-year {
+  display: inline-block;
+  background: #0057A3;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 4px 20px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+}
 
-/* card container */
+.dot {
+  width: 24px;
+  height: 24px;
+  border: 4px solid #0057A3;
+  border-radius: 50%;
+  background: #ffffff;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.tail-dot {
+  position: absolute;
+  right: -12px;
+  top: 22px;
+  width: 24px;
+  height: 24px;
+  border: 4px solid #0057A3;
+  border-radius: 50%;
+  background: #ffffff;
+  z-index: 1;
+}
+
+.timeline-item p {
+  font-size: 0.75rem;
+  margin-top: 0.6rem;
+  line-height: 1.25;
+}
+
+.why-us {
+  margin-top: 3rem;
+}
+
 .why-card {
   border: 1px solid #d7dfe8;
   border-radius: 6px;
@@ -147,7 +150,6 @@
   font-weight: 600;
 }
 
-/* icon in a light-blue circle */
 .why-icon-wrap {
   width: 48px;
   height: 48px;
@@ -159,12 +161,11 @@
   justify-content: center;
 }
 
-.why-icon { width: 40px; height: 40px; }
+.why-icon {
+  width: 40px;
+  height: 40px;
+}
 
-
-/* ===== Responsive Styles ===== */
-
-/* Tablets (stack timeline items better) */
 @media (max-width: 992px) {
   .timeline {
     flex-wrap: wrap;
@@ -174,7 +175,7 @@
 
   .timeline::before,
   .timeline::after {
-    display: none; /* hide connecting bar on tablets/mobile */
+    display: none;
   }
 
   .timeline-item,
@@ -183,14 +184,13 @@
   }
 }
 
-/* Mobile (stack everything vertically) */
 @media (max-width: 576px) {
   .hero-card {
     text-align: center;
   }
 
   .stats-col {
-    grid-template-columns: 1fr; /* 1 column instead of 2 */
+    grid-template-columns: 1fr;
   }
 
   .timeline {
@@ -206,4 +206,3 @@
     row-gap: 1.2rem;
   }
 }
-

@@ -88,7 +88,7 @@ function GetTheApplicationDetails(){
     return(
     <>
     <h1 className="text-center headings">Application Details of : <span className="fw-bold">{applicationId}</span></h1>
-    <div className="container mx-auto w-50 app-details py-5 mb-0">
+    <div className=" mx-auto app-details py-5 mb-0">
         <div className="row w-100 justify-content-center p-3 g-2 bg-light shadow">
             <div className="col-12 text-center p-2">
                 <p className="fs-4">Loan Type: <span className="fw-bold">{applicationDetails.loanType}</span> </p>
@@ -99,7 +99,7 @@ function GetTheApplicationDetails(){
                     
                                 
                 Object.entries(applicationDetails.details).map(([key, value]) => (
-                    <div className="col-6">
+                    <div className="col-12 col-md-6">
                         <p key={key} className="fs-5 ms-5">
                             <strong>{key}:</strong>
                             {String(value)? String(value) : <>Not Provided</>}

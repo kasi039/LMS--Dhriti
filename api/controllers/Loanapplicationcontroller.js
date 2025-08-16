@@ -1,4 +1,6 @@
 const Loan = require('../models/loanApplications');
+const Notification = require('../models/Notifications');
+
 exports.createLoanApplication = async (req, res) => {
     const userId = req.session.user?.id; 
     if (!userId) {
@@ -43,6 +45,9 @@ exports.statusupdate = async (req, res) => {
     if (!updatedApplication) {
       return res.status(404).json({ message: 'Error occured in updating application' });
     }
+
+    const newNotification = await new Notification({userId: updatedApplication.userId, message: `Your Application for ${updatedApplication.loanType} loan with id ${updatedApplication._id} is ${updatedApplication.status}.`});
+    await newNotification.save();
     res.json(updatedApplication);
   }
   catch(error){

@@ -3,12 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Nunito Sans', sans-serif;
   background-color: #f4f4f4;
   line-height: 1.6;
 }
-
 
 .main-page {
   display: flex;
@@ -16,6 +16,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .hero {
   width: 90%;
   background: #e4edf7;
@@ -29,7 +30,7 @@ body {
 
 .hero-inner {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   flex-direction: row;
   width: 90%;
   max-width: 1400px;
@@ -87,7 +88,6 @@ body {
   border-radius: 20px;
 }
 
-/* WHY DHRITI */
 .why-dhriti {
   text-align: center;
   padding: 60px 20px;
@@ -104,7 +104,7 @@ body {
 }
 
 .features-grid {
-  display: grid; /* ✅ use grid instead of flex */
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   max-width: 1200px;
@@ -140,7 +140,6 @@ body {
   font-size: 15px;
 }
 
-/* FOOTER */
 .footer {
   background-color: #2e2e2e;
   color: white;
@@ -170,7 +169,7 @@ body {
 
 .footer-links {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* ✅ auto responsive */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   text-align: left;
   margin-bottom: 30px;
@@ -225,74 +224,288 @@ body {
   color: #aaa;
 }
 
-/* OTHER COMPONENTS (unchanged from your file) */
-.user-accounts-container{ text-align: center; margin-top: 3rem; margin-bottom: 10rem; }
-.admin-page-container{ margin-top: 10rem; margin-bottom: 15rem; }
-.buttons-admin{ display: flex; justify-content: center; align-items: center; gap: 2em; flex-wrap: wrap; }
-.bigButton { padding: 10px 20px; font-size: 18px; font-weight: bold; border-radius: 8px; border: none; }
-.edit-user-container { margin-top: 5rem; margin-bottom: 10rem; }
-.heading-edit { text-align: center; font-weight: bold; }
-.big-text{ font-size: 70px; font-weight: bold; color: #0057A3; }
-.medium-text{ font-size: 24px; color: #333; }
-.loan-button{ align-items: center; display: flex; border: 0; justify-content: center; border-radius: 2rem; transition: background 0.3s ease; padding: 1rem; }
-.loan-icon { width: 7rem; height: auto; }
-.apply-head { font-size: 36px; color: #0057A3; font-weight: bold; margin-top : 8rem; }
-.apply-subhead { font-size: 30px; color: #333; margin-top: 6rem; }
-.dataform{ border-radius: 4rem; margin-bottom: 8rem; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
-.success-head{ font-size: 36px; color: #0b9f19; font-weight: bold; margin-top : 8rem; }
-.success-img{ width: 20rem; height: auto; }
-.success-subhead{ font-size: 30px; color: #333; margin-top: 6rem; }
-.app-id{ color:#0b9f19 }
-.table{ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
-.Document-anchor{ text-decoration: none; border-radius: 0.5rem; background-color:#00acee; color: white; padding: 0.5rem }
-.dark-theme { background-color: #121212; color: white; }
-.dark-theme .navbar, .dark-theme .card { background-color: #1f1f1f; color: white; }
-.signinicon{ width: 50px; height: 50px; margin-left: 5rem; }
-.profileicon{ width: 120px; height: 70px; }
-.services-div{ column-gap: 10rem; }
-.headings{ margin-top: 5rem; margin-bottom:4rem; }
-.app-details{ margin-bottom: 5rem; }
-.last-button{ margin-bottom: 10rem; }
+.user-accounts-container {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 10rem;
+}
 
-/* ✅ RESPONSIVE MEDIA QUERIES */
+.admin-page-container {
+  margin-top: 10rem;
+  margin-bottom: 15rem;
+}
+
+.buttons-admin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.bigButton {
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+}
+
+.edit-user-container {
+  margin-top: 5rem;
+  margin-bottom: 10rem;
+}
+
+.heading-edit {
+  text-align: center;
+  font-weight: bold;
+}
+
+.big-text {
+  font-size: 70px;
+  font-weight: bold;
+  color: #0057A3;
+}
+
+.medium-text {
+  font-size: 24px;
+  color: #333;
+}
+
+.loan-button {
+  align-items: center;
+  display: flex;
+  border: 0;
+  justify-content: center;
+  border-radius: 2rem;
+  transition: background 0.3s ease;
+  padding: 1rem;
+}
+
+.loan-icon {
+  width: 7rem;
+  height: auto;
+}
+
+.apply-head {
+  font-size: 36px;
+  color: #0057A3;
+  font-weight: bold;
+  margin-top: 8rem;
+}
+
+.apply-subhead {
+  font-size: 30px;
+  color: #333;
+  margin-top: 6rem;
+}
+
+.dataform {
+  border-radius: 4rem;
+  margin-bottom: 8rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.success-head {
+  font-size: 36px;
+  color: #0b9f19;
+  font-weight: bold;
+  margin-top: 8rem;
+}
+
+.success-img {
+  width: 20rem;
+  height: auto;
+}
+
+.success-subhead {
+  font-size: 30px;
+  color: #333;
+  margin-top: 6rem;
+}
+
+.app-id {
+  color: #0b9f19;
+}
+
+.table {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.Document-anchor {
+  text-decoration: none;
+  border-radius: 0.5rem;
+  background-color: #00acee;
+  color: white;
+  padding: 0.5rem;
+}
+
+.dark-theme {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-theme .navbar,
+.dark-theme .card {
+  background-color: #1f1f1f;
+  color: white;
+}
+
+.signinicon {
+  width: 50px;
+  height: 50px;
+  margin-left: 5rem;
+}
+
+.profileicon {
+  width: 120px;
+  height: 70px;
+}
+
+.services-div {
+  column-gap: 10rem;
+}
+
+.headings {
+  margin-top: 5rem;
+  margin-bottom: 4rem;
+}
+
+.app-details {
+  margin-bottom: 5rem;
+  width: 55%;
+}
+
+.last-button {
+  margin-bottom: 10rem;
+}
+
+.approved-div {
+  width: 50%;
+}
+
+.pay-text {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.pay-div {
+  width: 30%;
+}
+
 @media (max-width: 1024px) {
   .hero-inner {
     flex-direction: column;
     text-align: center;
     height: auto;
   }
-  .hero-text { max-width: 100%; text-align: center; }
-  .hero-buttons { justify-content: center; }
-  .hero-image { margin-top: 20px; }
-  .hero-image img { height: auto; width: 80%; }
+  
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .hero-image {
+    margin-top: 20px;
+  }
+  
+  .hero-image img {
+    height: auto;
+    width: 80%;
+  }
+  
+  .pay-div {
+    width: 55%;
+  }
+  
+  .app-details {
+    width: 70%;
+  }
 }
 
 @media (max-width: 768px) {
-  .hero { padding: 30px 10px; }
-  .hero-text h1 { font-size: 28px; }
-  .hero-text p { font-size: 16px; }
-  .why-dhriti h2 { font-size: 26px; }
-  .feature-box h3 { font-size: 18px; }
-  .feature-box p { font-size: 14px; }
-  .approved-div{
-    width: 75% !important;
+  .hero {
+    padding: 30px 10px;
+  }
+  
+  .hero-text h1 {
+    font-size: 28px;
+  }
+  
+  .hero-text p {
+    font-size: 16px;
+  }
+  
+  .why-dhriti h2 {
+    font-size: 26px;
+  }
+  
+  .feature-box h3 {
+    font-size: 18px;
+  }
+  
+  .feature-box p {
+    font-size: 14px;
+  }
+  
+  .approved-div {
+    width: 75%;
+  }
+  
+  .pay-div {
+    width: 70%;
+  }
+  
+  .app-details {
+    width: 80%;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-text h1 { font-size: 22px; line-height: 1.3; }
-  .hero-text p { font-size: 14px; }
-  .hero-buttons a.btn { padding: 10px 16px; font-size: 14px; }
-  .feature-box img { width: 60px; height: 60px; }
-  .feature-box { padding: 15px; }
-  .why-dhriti { padding: 40px 10px; }
-  .approved-div{
-    width: 90% !important;
+  .hero-text h1 {
+    font-size: 22px;
+    line-height: 1.3;
   }
-  .footer-links { grid-template-columns: 1fr; text-align: center; }
-}
-
-
-.approved-div{
-  width: 50%;
+  
+  .hero-text p {
+    font-size: 14px;
+  }
+  
+  .hero-buttons a.btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  
+  .feature-box img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .feature-box {
+    padding: 15px;
+  }
+  
+  .why-dhriti {
+    padding: 40px 10px;
+  }
+  
+  .approved-div {
+    width: 90%;
+  }
+  
+  .pay-div {
+    width: 90%;
+  }
+  
+  .app-details {
+    width: 90%;
+  }
+  
+  .footer-links {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 }

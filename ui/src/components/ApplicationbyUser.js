@@ -16,7 +16,6 @@ function UserApplications() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // Fetch session user
                 const userRes = await fetch('http://localhost:5000/api/users/session-user', {
                     credentials: 'include',
                 });

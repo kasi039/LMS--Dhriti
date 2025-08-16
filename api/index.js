@@ -43,6 +43,8 @@ app.use('/api/documents', uploadRoutes);
 const payments = require('./routes/payments');
 app.use('/api/payments', payments);
 
+const notifications = require('./routes/notifications');
+app.use('/api/notifications', notifications);
 
 
 const PORT = process.env.PORT;

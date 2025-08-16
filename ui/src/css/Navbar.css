@@ -56,7 +56,7 @@
 }
 
 
-/* Make icons stack nicely on mobile */
+
 @media (max-width: 991px) {
   .NavLink {
     margin-left: 0;
