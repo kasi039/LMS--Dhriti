@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/AboutUsPage.css";
+import HelpFab from "./HelpFab"; // Import the floating button component
 
 import { Row, Col, Card, Button } from "react-bootstrap";
 
@@ -18,6 +19,7 @@ import { ReactComponent as BorrowIcon     } from "../assets/borrow-icon.svg";
 import { ReactComponent as TrustedIcon    } from "../assets/trusted-icon.svg";
 import { ReactComponent as CollateralIcon } from "../assets/collateral-icon.svg";
 import { ReactComponent as AiIcon         } from "../assets/ai-icon.svg";
+
 
 export default function AboutUsPage() {
   /* ───────── stats for hero card ───────── */
@@ -115,6 +117,10 @@ export default function AboutUsPage() {
           ))}
         </Row>
       </section>
+      <div style={{ padding: "2rem", textAlign: "center" }}>
+            {/* your existing UI */}
+            <HelpFab /> {/* ← floating button */}
+          </div>
     </div>
   );
 }

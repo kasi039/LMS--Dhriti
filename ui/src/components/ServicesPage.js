@@ -10,6 +10,7 @@ import { ReactComponent as CarIcon }       from "../assets/car_loan.svg";
 import { ReactComponent as GoldIcon }      from "../assets/gold_loan.svg";
 import { ReactComponent as InstantIcon }   from "../assets/instant_loan.svg";
 import "../css/ServicesPage.css"; // Import your CSS styles
+import HelpFab from "./HelpFab";
 
 export default function ServicesPage() {
   const navigate = useNavigate();
@@ -74,6 +75,11 @@ export default function ServicesPage() {
         <div className="loan-tile filler" aria-hidden="true"></div>
       </div>
       <button className="btn get-app-btn mt-4">Get Dhriti App</button>
+      <div style={{ padding: "2rem", textAlign: "center" }}>
+      {/* your existing UI */}
+      <HelpFab /> {/* ← floating button */}
     </div>
+    </div>
+    
   );
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import {useState, useEffect} from "react";
 import { Button } from 'react-bootstrap';
-
+import HelpFab from './HelpFab'; 
 
 
 function LoanPayment() {
@@ -65,11 +65,15 @@ function LoanPayment() {
                 </div>
             </div>
         </div>
-        <div></div>
-        </>
-    )
+        <div style={{ padding: "2rem", textAlign: "center" }}>
+                  {/* your existing UI */}
+                  <HelpFab /> {/* ← floating button */}
+                </div>
+        <div>
+        </div>
         
-    
+        </>
+    )    
 }
 
 export default LoanPayment;

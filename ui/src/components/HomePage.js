@@ -1,5 +1,8 @@
 // src/components/HomePage.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import '../css/HomePage.css'; // Import your CSS styles
+
 import phoneImage from '../assets/phone-mockup.png'; 
 import approvalIcon from '../assets/approval-icon.svg';
 import percentIcon from '../assets/100percent-icon.svg';
@@ -7,6 +10,8 @@ import bankIcon from '../assets/bank-icon.svg';
 import happyIcon from '../assets/happy-icon.svg';
 
 function HomePage() {
+  const navigate = useNavigate();
+
   return (
     <main className="main-page">
       {/* Hero Section */}
@@ -22,15 +27,16 @@ function HomePage() {
               Ready to invest in your future, but concerned about the financial hurdles along the way? Dhriti is your Instant Loan App for quick financial solutions in India. As a trusted credit loan app, we are here to help you navigate the world of personal loans with confidence and clarity.
             </p>
             <div className="hero-buttons">
-              <a href="#apply" className="btn">Apply Now</a>
-              
+              <button className="btn" onClick={() => navigate('/Auth')}>
+                Apply Now
+              </button>
             </div>
           </div>
 
           {/* Right Image */}
-           <div className="hero-image">
+          <div className="hero-image">
             <img src={phoneImage} alt="App Preview" />
-          </div> 
+          </div>
         </div>
       </section>
 
@@ -38,7 +44,7 @@ function HomePage() {
         <h2>Why Choose Dhriti credit loan app?</h2>
         <div className="features-grid">
           <div className="feature-box">
-            <img src= {approvalIcon} alt="Approval in 10 minutes" />
+            <img src={approvalIcon} alt="Approval in 10 minutes" />
             <h3>Approval in 10 minutes</h3>
             <p>Get funds fast with our 10-minutes loan approval process</p>
           </div>

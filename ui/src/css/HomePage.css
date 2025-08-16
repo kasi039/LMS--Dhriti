@@ -1,0 +1,217 @@
+/* HomePage.css */
+
+.main-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  width: 90%;
+  background: #e4edf7;
+  color: #2F2F2F;
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
+.hero-inner {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 90%;
+  max-width: 1400px;
+  min-height: auto;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 650px;
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-size: 36px;
+  line-height: 1.4;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-text .highlight {
+  color: #0057A3;
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.play-badge {
+  height: 50px;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  margin-left: 0;
+  border-radius: 20px;
+}
+
+.why-dhriti {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fff;
+  margin-top: 20px;
+  width: 90%;
+}
+
+.why-dhriti h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #2f2f2f;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-box {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.feature-box:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 16px;
+}
+
+.feature-box h3 {
+  font-size: 20px;
+  color: #0057A3;
+  margin-bottom: 10px;
+}
+
+.feature-box p {
+  color: #666;
+  font-size: 15px;
+}
+
+/* Simple primary button for the hero */
+.btn {
+  background: none;
+  color: #0057A3;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: 2px solid #0057A3;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #d9e6f2;
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+  }
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+  }
+  .hero-buttons {
+    justify-content: center;
+  }
+  .hero-image {
+    margin-top: 20px;
+  }
+  .hero-image img {
+    height: auto;
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 30px 10px;
+  }
+  .hero-text h1 {
+    font-size: 28px;
+  }
+  .hero-text p {
+    font-size: 16px;
+  }
+  .why-dhriti h2 {
+    font-size: 26px;
+  }
+  .feature-box h3 {
+    font-size: 18px;
+  }
+  .feature-box p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 22px;
+    line-height: 1.3;
+  }
+  .hero-text p {
+    font-size: 14px;
+  }
+  .hero-buttons .btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  .feature-box img {
+    width: 60px;
+    height: 60px;
+  }
+  .feature-box {
+    padding: 15px;
+  }
+  .why-dhriti {
+    padding: 40px 10px;
+  }
+}

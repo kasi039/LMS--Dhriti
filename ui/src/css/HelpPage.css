@@ -1,0 +1,88 @@
+/* Page shell */
+.help-wrap h1 {
+  font-weight: 800;
+}
+
+.help-hero {
+  border-radius: 16px;
+  background: linear-gradient(180deg, #f8fbff, #ffffff);
+  border: 1px solid #e7eef8;
+}
+
+/* Tiles */
+.help-tile {
+  border-radius: 16px;
+  cursor: pointer;
+  border: 1px solid #e8eef6;
+  transition: transform 0.08s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.help-tile:hover {
+  transform: translateY(-2px);
+  border-color: #ccd9ea;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.tile-icon {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+/* Guided steps */
+.guide-step {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px;
+  border: 1px dashed #d7e2f0;
+  border-radius: 12px;
+  background: #fbfdff;
+}
+
+.step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  background: #0057A3;
+  color: #fff;
+}
+
+/* Tips */
+.help-tips {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.help-tips li {
+  margin-bottom: 6px;
+}
+
+/* Floating button */
+.help-fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  font-size: 22px;
+  color: #fff;
+  background: linear-gradient(90deg, #0057A3, #004080);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.08s ease, filter 0.18s ease;
+}
+
+.help-fab:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+
+.help-fab:active {
+  transform: translateY(1px);
+}

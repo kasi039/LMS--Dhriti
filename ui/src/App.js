@@ -35,6 +35,7 @@ import Allapprovedapplications from "./components/Allapprovedpayments";
 import AddUser from "./components/AddUser";
 import Allpayments from "./components/Allpayments";
 import Notificationsforme from "./components/NotificationsUI";
+import HelpCenter from "./components/HelpCenter";
 
 import "../src/css/App.css";
 import "../src/css/AuthPage.css";
@@ -86,6 +87,7 @@ function App() {
           <Route path="/AddUserByAdmin" element={<AddUser/>}/>
           <Route path="/Allpayments" element={<Allpayments/>}/>
           <Route path="/notifications" element={<Notificationsforme/>}/>
+          <Route path="/help" element={<HelpCenter />} />
         </Routes>
         <Footer />
       </div>

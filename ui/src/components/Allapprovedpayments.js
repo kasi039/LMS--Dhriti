@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import {Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import HelpFab from "./HelpFab"; // Import the floating button component
 
 function Allapprovedapplications(){
     const [applications, setApplications] = useState([]);
@@ -58,7 +59,11 @@ function Allapprovedapplications(){
         ))}
         </>
     }
-
+    <div style={{ padding: "2rem", textAlign: "center" }}>
+                      {/* your existing UI */}
+                      <HelpFab /> {/* ← floating button */}
+                    </div>
+            <div></div>
         </>
 
     )
